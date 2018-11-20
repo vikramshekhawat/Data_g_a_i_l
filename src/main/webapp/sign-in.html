@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Gail (India) Limited</title>
+
+<link href="font/font.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script src="js/spin.js"></script> 
+<script src="js/jquery.spin.js"></script> 
+<script src="js/common.js"></script> 
+<script src="js/messages.js"></script>
+<script src="js/html-constants.js"></script>  
+<script src="js/jquery-1.11.2.min.js"></script>
+
+<script src="js/user.js"></script> 
+<script src="js/constants.js"></script> 
+<script src="js/processing.js"></script> 
+<script type="text/jscript" src="js/uiJquery.js"></script>
+</head>
+
+<body>
+
+<div class="Wrapper">
+<a href="#" title="GAIL - Gas Nomination" class="gail-logo">
+<img src="images/GAIL-Logo.png" width="107" height="80" alt="Gail Logo">
+<p class="gailTaglin1">Gail (India) Limited</p>
+<p class="gailTaglin2">India's <span>Youngest</span> Maharatna</p>
+</a>
+
+
+
+<div class="formBox">
+<h2>Sign in with your GAIL Account</h2>
+
+        <div class="FormField">
+        	<input type="text" placeholder="Username" class="username"  onkeypress="submitLoginForm(this,event);" autofocus>
+        </div>
+         <div class="FormField">
+            <input type="password" placeholder="Password" class="password" onkeypress="submitLoginForm(this,event);">
+            <a href="#" class="submitBtn" onclick="loginUser()" ></a>
+        </div>
+        <div class="FormField">
+        <p class="Rememberme"><input name="" type="checkbox" value="" class="chkbox">Remember me </p>
+       <div class="borderbotton"></div>
+        <a href="#" class="forgotPassword" onclick="sendPassword()">Forgot your password?</a>
+        
+        </div>
+
+</div>
+
+
+</div>
+<div class="playStoreLogo">
+ <a href="https://play.google.com/store/apps/details?id=com.gail.gasnomination&hl=en_IN" target="_blank">
+<img border="0" alt="Google PlayStore" src="images/google_play.png" >
+</a>
+<a href="https://itunes.apple.com/us/app/gail-nomination-system/id1411869879?ls=1&mt=8"  target="_blank">
+<img border="0" alt="iTune" src="images/Apple_Store.png" >
+</a>
+</div>
+<div class="footer">
+	Privacy Policy | Copyright@2016 GAIL India Limited. All Rights Reserved </div>
+
+
+<script>
+$(document).ready(function(){
+	$('body').append(htmlConstants.logoutModel);
+	$('body').append(htmlConstants.successModel);
+	$('body').append(htmlConstants.forgetPasswordModel);
+	$('body').append(htmlConstants.errorModel);
+	$('body').append(htmlConstants.alertModel);
+	
+	
+	
+
+});
+</script>
+</body>
+</html>

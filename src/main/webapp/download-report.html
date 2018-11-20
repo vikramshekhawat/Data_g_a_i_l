@@ -1,0 +1,946 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Gail (India) Limited</title>
+<link href="font/font.css" rel="stylesheet" type="text/css" />
+<link href="css/ManagementCentre.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/chosen.css" rel="stylesheet" />
+<link href="css/prism.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css"
+	href="css/jquery.datetimepicker.css" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="css/daterangepicker.css" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="css/component.css" />
+<script src="js/common.js"></script>
+<script src="js/messages.js"></script>
+<script src="js/html-constants.js"></script>
+<script src="js/document-init.js"></script>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/chosen.jquery.min.js"></script>
+<script src="js/chosen.jquery.js"></script>
+<script>
+	(function(e, t, n) {
+		var r = e.querySelectorAll("html")[0];
+		r.className = r.className.replace(/(^|\s)no-js(\s|$)/, "$1js$2")
+	})(document, window, 0);
+</script>
+
+</head>
+
+<body onload="configureAdminPage()">
+	<div class="wrapperMC">
+		<div class="left">
+			<a href="#" class="tabMC arrow active" id="NominateTab"><span class="downloadReport"></span>Download Report</a> 
+			<a href="#"	class="tabMC arrow" id="UpdateDataTab"><span class="uploadData"></span>Upload Data</a> 
+			<a href="#" class="tabMC arrow" id="TickerTab"><span class="ticker"></span>Ticker</a> 
+			<a href="#" class="tabMC arrow" id="PushNotificationTab"><span class="pushNotificationTab"></span>Push
+				Notification</a>
+		</div>
+		<div id="nominate">
+			<div class="right selectNominationDetail">
+				<div class="UploadDataButtonBox">
+					<a id="tab1" href="#userTab" rel="userTab"
+						class="detailsBTN activeDetails userData"
+						onclick="activeDownloadUser();">User Details</a> <a id="tab2"
+						href="#contractTab" rel="contractTab"
+						class="detailsBTN contractData"
+						onclick="activeDownloadContract();">Contract Details</a> <a
+						id="tab3" href="#nominationTab" rel="nominationTab"
+						class="detailsBTN materialData"
+						onclick="activeDownloadMaterial();">Nomination Details</a>
+					<div class="clear"></div>
+				</div>
+				<div id="downloadReport" class="downloadReport">
+
+					<div id="userTab" class="tabContent"></div>
+
+					<div id="contractTab" class="tabContent">
+						<div class="downloadReportRow" id="EndDate1">
+							<div class="leftdis">End Date</div>
+							<div class="rightdis">
+								<input class="downloadReportCalender contractEndDate"
+									id="datetimepicker2" value="End Date" readonly>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+
+					<div id="nominationTab" class="tabContent">
+						<div class="downloadReportRow">
+							<div class="leftdis">Select contract type</div>
+							<div class="rightdis">
+								<a href="#" class="btnDownloadReport gsaType activeBtn2"
+									onclick="activeGSA();">GSA</a><a href="#"
+									class="btnDownloadReport gtaType " onclick="activeGTA();">GTA</a>
+								<a href="#" class="btnDownloadReport bothType"
+									onclick="activeBoth();">Both</a>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="downloadReportRow" id="chkBoxChk">
+							<div class="leftdis">Select Date</div>
+							<div class="rightdis">
+								<label class="Single">Single Date</label> <input name=""
+									type="radio" value="" class="SingleDate" /> <label
+									class="Multiple">Multiple Date</label> <input name=""
+									type="radio" value="" class="MultipleDate" />
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="downloadReportRow displayNone" id="SingleDate">
+							<div class="leftdis">Select Single Date</div>
+							<div class="rightdis" >
+								<input class="downloadReportCalender singleSelectedDate"
+									id="datetimepicker2" value="Single Date" readonly>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="downloadReportRow displayNone" id="MultipleDate">
+							<div class="leftdis">Select Multiple Date</div>
+							<div class="rightdis"  style="width: 60%;float: left;">
+								<input class="downloadReportCalender fristMulSelectedDate"
+									id="datetimepicker2" value="From" readonly> <input
+									class="downloadReportCalender secondMulSelectedDate"
+									id="datetimepicker2" value="To" readonly>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="downloadReportRow">
+							<div class="leftdis">Select Region</div>
+							<div class="rightdis">
+								<select name="" id="#multiNominationRegion" class="dropdown regionDropdown">
+                        </select>
+							</div>
+							<div class="clear"></div>
+
+						</div>
+						<div class="downloadReportRow">
+							<div class="leftdis">Select Material Code</div>
+							<div class="rightdis">
+								<select name="" class="dropdown materialDropdown">
+								</select>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<h2 class="DRheading"></h2>
+					<div class="DRBTNBox">
+						<a href="#" class="btnDR active"
+							onclick="buildNominationReport();">Download Report</a> 
+						<a href="#" id="resetBtn" class="btnDR" onclick=" clearData();">Reset</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="UpdateData">
+			<div class="right">
+				<div class="UploadDataButtonBox">
+					<a href="#" class="detailsBTN activeDetails userData" onclick="activeUser();">User Details</a> 
+						
+					<a href="#" class="detailsBTN contractData" onclick="activeContract();">Contract Details</a> 
+						
+						
+					<a href="#" class="detailsBTN materialData" onclick="activeMaterial();">Material Details</a>
+						
+						
+					<a href="#" class="detailsBTN vendorData" onclick="activeVendor();">Seller Details</a>
+					<div class="clear"></div>
+				</div>
+				<h2 class="uploadDateHedding">
+					To <span class="uploadtype">add/update User </span> details click
+					browse and select excel file and then upload.
+				</h2>
+				<!--<div class="UploadDataButtonBox">
+			    <input type="file" class="uploadedFile" />
+			</div>-->
+				<div class="box">
+					<input type="file" name="file-1[]" id="file-1"
+						class="inputfile inputfile-1 uploadedFile"
+						data-multiple-caption="{count} files selected" multiple /> <label
+						for="file-1"> <span>Browse</span></label>
+				</div>
+				<div class="clear"></div>
+				<div class="UploadDataButtonBox1">
+					<a href="#" class="actionBtn" onclick="uploadFile();">Upload</a> <a
+						href="#" class="actionBtn" onclick="clearBrowse();">Cancel</a>
+				</div>
+			</div>
+
+			<div class="right gsaNominationDetailTable displayNone">
+				<h2 class="gtaName">Rajasthan Gas Limited</h2>
+				<div class="gtaTblBox">
+					<h3>GSA</h3>
+					<div class="tblGTA">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0"
+							class="gsaDataTable">
+						</table>
+					</div>
+					<button type="submit" class="ComnBtn"
+						onClick="saveOrUpdateNomination()">Submit</button>
+					<button type="submit" class="ComnBtn" style="margin-right: 15px;"
+						onClick="goToSelectNominationDetail()">Back</button>
+				</div>
+			</div>
+
+			<div class="right gtaNominationDetailTable displayNone">
+				<h2 class="gtaName">Rajasthan Gas Limited</h2>
+				<div class="gtaTblBox">
+					<h3>
+						GTA <span class="gtaUOM"></span>
+					</h3>
+					<div class="tblGTA">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0"
+							class="gtaDataTable">
+						</table>
+					</div>
+					<button type="submit" class="ComnBtn"
+						onClick="saveOrUpdateNomination()">Submit</button>
+					<button type="submit" class="ComnBtn" style="margin-right: 15px;"
+						onClick="goToSelectNominationDetail()">Back</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="TickerData">
+			<div class="right tickerDetail">
+				<h2 class="heading">Add Ticker</h2>
+				<p class="comName"></p>
+				<div id="downloadReport" class="downloadReport">
+					<div class="downloadReportRow" id="TickerText">
+						<div class="leftdis">Add Ticker Text</div>
+						<div class="rightdis">
+							<input type="text" placeholder="Add Ticker Text"
+								class="tickerText" id="tickerTextBox" />
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="downloadReportRow" id="StartDate">
+						<div class="leftdis">Start Date</div>
+						<div class="rightdis">
+							<input class="startDate" id="datetimepicker2" value="Start Date"
+								readonly="readonly" />
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="downloadReportRow" id="EndDate">
+						<div class="leftdis">End Date</div>
+						<div class="rightdis">
+							<input class="endDate" id="datetimepicker2" value="End Date"
+								readonly="readonly" />
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="downloadReportRow">
+						<div class="leftdis">Select Region</div>
+						<div class="rightdis">
+							<select id="multipleRegions" data-placeholder="Select Regions"
+								class="chosen-select regionDropdown" multiple tabindex="2">
+							</select>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div class="downloadReportRow">
+						<div class="leftdis">Upload Users</div>
+						<div class="rightdis">
+<!--        						<div class="innerleftdis side-by-side clearfix"> -->
+<!--        							 <div> -->
+<!-- 							         <select id="multiplePayers" data-placeholder="Select Users" -->
+<!-- 							          class="chosen-select" multiple tabindex="2" disabled=""> -->
+<!-- 							         </select> -->
+<!--         						  </div> -->
+<!--        						</div> -->
+      						<div class="rightdis side-by-side clearfix">
+        						<div class="box-ticker">
+         							<input type="file" name="file-ticker" id="file-ticker"
+         								class="innerinputfile inputfile-1 tickerUploadedFile" onchange="uploadTickerFile()"
+         								data-multiple-caption="{count} files selected"  multiple /> 
+         								<label for="file-ticker"> <span>Browse</span></label>
+        						</div>
+        					
+        					</div>
+       					</div>
+						<div class="clear" />
+					</div>
+					<h2 class="DRheading"></h2>
+					<div class="DRBTNBox">
+						<a href="#" class="btnDR active" onclick="createTicker();">Submit</a>
+						<a href="#" class="btnDR active" onclick="getTickerHistory();">History</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="right displayTickerDetailTable displayNone">
+			<h2 class="gtaName"></h2>
+			<h3 class="data-head-h3">GSA</h3>
+			<div class="gtaTblBox">
+				<div class="tblGTA">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0"
+						class="tickerHistoryDisplayTable">
+					</table>
+				</div>
+				<button type="submit" class="ComnBtn" style="margin-right: 15px;"
+					onClick="goBackToTicker()">Back</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="PushNotificationData">
+		<div class="right notificationDetail">
+			<h2 class="heading">Push Notification</h2>
+			<p class="comName"></p>
+			<div id="downloadReport" class="downloadReport">
+				<div class="downloadReportRow" id="PushNotificationText">
+					<div class="leftdis">Add Push Notification Text</div>
+					<div class="rightdis">
+						<input type="text" placeholder="Add Push Notification Text"
+							class="pushNotificationText" id="pushNotificationTextBox" />
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<div class="downloadReportRow">
+					<div class="leftdis">Select Region</div>
+					<div class="rightdis">
+						<select id="multipleRegionsPushNotification" data-placeholder="Select Regions"
+							  class="chosen-select regionMultidropdown" multiple
+							tabindex="2">
+						</select>
+					</div>
+					<div class="clear"></div>
+
+				</div>
+				<div class="downloadReportRow">
+					<div class="leftdis">Upload Users</div>
+					<div class="rightdis">
+<!--        						<div class="innerleftdis side-by-side clearfix"> -->
+<!--        							 <div> -->
+<!-- 									<select id="multipleUsers" data-placeholder="Select Users" -->
+<!-- 									class="chosen-select" multiple tabindex="2" disabled=""> -->
+<!-- 									</select> -->
+<!-- 								</div> -->
+<!--        						</div> -->
+      						<div class="rightdis side-by-side clearfix">
+        						<div class="box-ticker">
+         							<input type="file" name="file-notification" id="file-notification"
+         								class="innerinputfile inputfile-1 notificationUploadedFile" onchange="uploadNotificationFile()"
+         								data-multiple-caption="{count} files selected"  multiple /> 
+         								<label for="file-notification"> <span>Browse</span></label>
+        						</div>
+        					</div>
+       					</div>
+					<!-- <div class="rightdis">
+						<div class="side-by-side clearfix">
+							<div>
+								<select id="multipleUsers" data-placeholder="Select Users"
+									class="chosen-select" multiple tabindex="2" disabled="">
+								</select>
+							</div>
+						</div>
+						
+					</div> -->
+					<div class="clear" />
+				</div>
+				<h2 class="DRheading"></h2>
+				<div class="DRBTNBox">
+					<a href="#" class="btnDR active" onclick="sendPushNotification();">Submit</a>
+					<a href="#" class="btnDR active"
+						onclick="getNotificationHistory();">History</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="right displayNotificationDetailTable displayNone">
+		<h2 class="gtaName"></h2>
+		<h3 class="data-head-h3">GSA</h3>
+		<div class="gtaTblBox">
+			<div class="tblGTA">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0"
+					class="notificationHistoryDisplayTable">
+				</table>
+			</div>
+			<button type="submit" class="ComnBtn" style="margin-right: 15px;"
+				onClick="goBackToPushNotification()">Back</button>
+		</div>
+	</div>
+	</div>
+	</div>
+
+	<div class="clear"></div>
+	<div class="ManagementCfooter">Privacy Policy | Copyright@2016
+		GAIL India Limited. All Rights Reserved</div>
+	</div>
+
+	<script type="text/jscript" src="js/jquery.datetimepicker.full.js"></script>
+	<script type="text/jscript" src="js/uiJquery.js"></script>
+	<script type="text/javascript" src="js/moment.js"></script>
+	<script type="text/javascript" src="js/daterangepicker.js"></script>
+	<script src="js/constants.js"></script>
+	<script src="js/management.js"></script>
+	<script src="js/processing.js"></script>
+	<script src="js/admin.js"></script>
+	<script src="js/custom-file-input.js"></script>
+	<script>
+		/*$('.datepicker').datetimepicker({
+		
+		 lang:'ch',
+		 timepicker:false,
+		 format:'d/m/Y',
+		 formatDate:'d/m/y',
+		 });*/
+		$('.downloadReportCalender').datetimepicker({
+			lang : 'ch',
+			timepicker : false,
+			format : 'd-m-Y',
+			formatDate : 'd-m-Y'
+		});
+
+		$('.startDate').datetimepicker({
+			lang : 'en',
+			timepicker : true,
+			format : 'd-m-Y H:m',
+			formatDate : 'd-m-Y',
+			formatTime : 'H:m'
+		});
+
+		$('.endDate').datetimepicker({
+			lang : 'en',
+			timepicker : true,
+			format : 'd-m-Y H:m',
+			formatDate : 'd-m-Y',
+			minDate : datetimeFromater($('.startDate').val().trim()),
+			formatTime : 'H:m'
+		});
+
+		/* $('.downloadReportCalender').daterangepicker({ 
+		 singleDatePicker: true,
+		 locale: {
+		 format: 'DD-MM-YYYY'
+		 }
+		 });
+		 */
+
+		$(document).ready(
+				function() {
+					$('body').append(htmlConstants.successTickerModel);
+					$('body').append(htmlConstants.successModel);
+					$('body').append(htmlConstants.logoutModel);
+					$('body').append(htmlConstants.errorModel);
+					$('body').append(htmlConstants.alertModel);
+					$('body').append(htmlConstants.customerDescModel);
+					$('body').append(htmlConstants.materialDescModel);
+					insertHeader();
+
+					$(".chosen-select").chosen({
+						no_results_text : "Oops, nothing found!",
+						width : "230px"
+					});
+
+					setTimeout(function() {
+						console.log("1");
+
+						$("#multipleRegions").trigger("chosen:updated");
+						$("#multipleRegionsPushNotification").trigger("chosen:updated");
+
+					}, 500);
+
+				});
+
+		function callbackfunciton() {
+			var aa = [];
+			var activeHrefValue = $("a.active").attr("id");
+			for (var i = 0; i < 2; i++) {
+				aa[i] = $(
+						'.notificationHistoryDisplayTable thead tr th:nth-child('
+								+ (i + 1) + ')').width();
+				$(
+						'.notificationHistoryDisplayTable thead tr th:nth-child('
+								+ (i + 1) + ') div').width(aa[i]);
+			}
+			for (var i = 0; i < 4; i++) {
+				aa[i] = $(
+						'.tickerHistoryDisplayTable thead tr th:nth-child('
+								+ (i + 1) + ')').width();
+				$(
+						'.tickerHistoryDisplayTable thead tr th:nth-child('
+								+ (i + 1) + ') div').width(aa[i]);
+			}
+			setTimeout(function() {
+				callbackfunciton();
+			}, 10);
+		}
+		callbackfunciton();
+
+		$('.SingleDate').attr('checked', 'checked');
+		$('#SingleDate').css('display', 'block');
+		$(document).on('click', '.SingleDate', function() {
+			$('#SingleDate').css('display', 'block');
+			$('#MultipleDate').css('display', 'none');
+			$('.MultipleDate').removeAttr('checked');
+		})
+		$(document).on('click', '.MultipleDate', function() {
+			$('#MultipleDate').css('display', 'block');
+			$('#SingleDate').css('display', 'none');
+			$('.SingleDate').removeAttr('checked');
+		})
+
+		$('#multipleUsers').on('change', function(evt, params) {
+		       var $s = $(this);
+
+		        if (params.selected && params.selected == "All") 
+		        {
+		            // disable the select
+					$("#multipleUsers").val("All").trigger("chosen:updated");
+		            $s.children('option').not(':selected').each(function(){
+		            $(this).attr('disabled','disabled');
+		            });
+		        }
+		        else if (params.deselected && params.deselected == "All") 
+		        {
+		            // enable back
+		            $s.children('option').each(function(){
+		                $(this).removeAttr('disabled');
+		            });
+		        }
+		        // force chosen update
+		        $('#multipleUsers').trigger('chosen:updated');
+		    });
+		
+		$('#multiplePayers').on('change', function(evt, params) {
+		       var $s = $(this);
+
+		        if (params.selected && params.selected == "All") 
+		        {
+		            // disable the select
+					$("#multiplePayers").val("All").trigger("chosen:updated");
+		            $s.children('option').not(':selected').each(function(){
+		            $(this).attr('disabled','disabled');
+		            });
+		        }
+		        else if (params.deselected && params.deselected == "All") 
+		        {
+		            // enable back
+		            $s.children('option').each(function(){
+		                $(this).removeAttr('disabled');
+		            });
+		        }
+		        // force chosen update
+		        $('#multiplePayers').trigger('chosen:updated');
+		    });
+		
+		
+		
+		
+		
+		
+		$('#multipleRegions').on('change', function(evt, params) {
+		       var $s = $(this);
+		       if(params.selected){
+		       	$('#multiplePayers').prop('disabled', false)
+		       } else if(params.deselected){
+		       	var region = $('#multipleRegions').val();
+		       	if(!region){
+		       		clearDropDownData();
+		       	}
+		       }
+
+		        if (params.selected && params.selected == "All") 
+		        {
+		            // disable the select
+					$("#multipleRegions").val("All").trigger("chosen:updated");
+		            $s.children('option').not(':selected').each(function(){
+		            $(this).attr('disabled','disabled');
+		            });
+		        }
+		        else if (params.deselected && params.deselected == "All") 
+		        {
+		            // enable back
+		            $s.children('option').each(function(){
+		                $(this).removeAttr('disabled');
+		            });
+		        }
+		        // force chosen update
+		        $('#multipleRegions').trigger('chosen:updated');
+		    });
+		
+		
+		
+		$("#multipleRegionsPushNotification").on('change', function(evt, params) {
+		       var $s = $(this);
+				if(params.selected){
+					$('#multipleUsers').prop('disabled', false)
+				} else if(params.deselected){
+					var region = $('#multipleRegionsPushNotification').val();
+			       	if(!region){
+						clearNotificationDropDownData();
+			       	}
+				}
+
+		        if (params.selected && params.selected == "All") 
+		        {
+		            // disable the select
+					$("#multipleRegionsPushNotification").val("All").trigger("chosen:updated");
+		            $s.children('option').not(':selected').each(function(){
+		            $(this).attr('disabled','disabled');
+		            });
+		        }
+		        else if (params.deselected && params.deselected == "All") 
+		        {
+		            // enable back
+		            $s.children('option').each(function(){
+		                $(this).removeAttr('disabled');
+		            });
+		        }
+		        // force chosen update
+		        $('#multipleRegionsPushNotification').trigger('chosen:updated');
+		    });
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		// $('#multiplePayers').on('change', function(evt, params) {
+		//     var $s = $(this);
+
+		//      if (params.selected && params.selected == "All") 
+		//      {
+		//          // disable the select
+		// 			$("#multiplePayers").val("All").trigger("chosen:updated");
+		//          $s.children('option').not(':selected').each(function(){
+		//          $(this).attr('disabled','disabled');
+		//          });
+
+		//          
+		//           if (params.selected && params.selected == "All") 
+		//         {
+		//             // disable the select
+		// 			$("#multipleUsers").val("All").trigger("chosen:updated");
+		//             $s.children('option').not(':selected').each(function(){
+		//             $(this).attr('disabled','disabled');
+		//             });
+		//         }
+		//         else if (params.deselected && params.deselected == "All") 
+		//         {
+		//             // enable back
+		//             $s.children('option').each(function(){
+		//                 $(this).removeAttr('disabled');
+		//             });
+		//         }
+		//         // force chosen update
+		//         $('#multipleUsers').trigger('chosen:updated');
+		//          //*****************************************************************************************
+
+		//      }
+		//      else if (params.deselected && params.deselected == "All") 
+		//      {
+		//          // enable back
+		//          $s.children('option').each(function(){
+		//              $(this).removeAttr('disabled');
+		//          });
+		//      }
+		//      // force chosen update
+		//      $('#multiplePayers').trigger('chosen:updated');
+		//  }); 
+
+		//**************************************************************************************
+
+// 		$('#multipleRegionsPushNotification')
+// 				.on(
+// 						'change',
+// 						function(evt, params) {
+// 							var $s = $(this);
+
+// 							if (params.selected && params.selected == "All") {
+// 								// disable the select
+								
+// 								debugger;
+// 								$("#multipleRegionsPushNotification")
+// 										.val("All").trigger("chosen:updated");
+// 								$s.children('option').not(':selected').each(
+// 										function() {
+// 											$(this)
+// 													.attr('disabled',
+// 															'disabled');
+// 										});
+
+// 								//********select multiUser***********************************
+
+// 								$('#multipleUsers')
+// 										.on(
+// 												'change',
+// 												function(evt, params) {
+// 													var $s = $(this);
+
+// 													if (params.selected
+// 															&& params.selected == "All") {
+// 														// disable the select
+// 														$("#multipleUsers")
+// 																.val("All")
+// 																.trigger(
+// 																		"chosen:updated");
+// 														$s
+// 																.children(
+// 																		'option')
+// 																.not(
+// 																		':selected')
+// 																.each(
+// 																		function() {
+// 																			$(
+// 																					this)
+// 																					.attr(
+// 																							'disabled',
+// 																							'disabled');
+// 																		});
+// 													} else if (params.deselected
+// 															&& params.deselected == "All") {
+// 														// enable back
+// 														$s
+// 																.children(
+// 																		'option')
+// 																.each(
+// 																		function() {
+// 																			$(
+// 																					this)
+// 																					.removeAttr(
+// 																							'disabled');
+// 																		});
+// 													}
+// 													// force chosen update
+// 													$('#multipleUsers')
+// 															.trigger(
+// 																	'chosen:updated');
+// 												});
+
+// 							} else if (params.deselected
+// 									&& params.deselected == "All") {
+// 								// enable back
+// 								$s.children('option').each(function() {
+// 									$(this).removeAttr('disabled');
+// 								});
+// 							}
+// 							// force chosen update
+// 							$('#multipleRegionsPushNotification').trigger(
+// 									'chosen:updated');
+// 						});
+
+// 		$("#multipleRegions")
+// 				.on(
+// 						'change',
+// 						function(evt, params) {
+// 							var $s = $(this);
+// 							if (params.selected && params.selected == "All") {
+// 								// disable the select
+// 								$("#multipleRegions").val("All").trigger(
+// 										"chosen:updated");
+// 								$s.children('option').not(':selected').each(
+// 										function() {
+// 											$(this)
+// 													.attr('disabled',
+// 															'disabled');
+// 										});
+// 								//****************************************select multipayer********************  
+// 								$('#multiplePayers')
+// 										.on(
+// 												'change',
+// 												function(evt, params) {
+// 													var $s = $(this);
+
+// 													if (params.selected
+// 															&& params.selected == "All") {
+// 														// disable the select
+// 														$("#multiplePayers")
+// 																.val("All")
+// 																.trigger(
+// 																		"chosen:updated");
+// 														$s
+// 																.children(
+// 																		'option')
+// 																.not(
+// 																		':selected')
+// 																.each(
+// 																		function() {
+// 																			$(
+// 																					this)
+// 																					.attr(
+// 																							'disabled',
+// 																							'disabled');
+// 																		});
+// 													} else if (params.deselected
+// 															&& params.deselected == "All") {
+// 														// enable back
+// 														$s
+// 																.children(
+// 																		'option')
+// 																.each(
+// 																		function() {
+// 																			$(
+// 																					this)
+// 																					.removeAttr(
+// 																							'disabled');
+// 																		});
+// 													}
+// 													// force chosen update
+// 													$('#multiplePayers')
+// 															.trigger(
+// 																	'chosen:updated');
+// 												});
+
+// 							} else if (params.deselected
+// 									&& params.deselected == "All") {
+// 								// enable back
+// 								$s.children('option').each(function() {
+// 									$(this).removeAttr('disabled');
+// 								});
+// 							}
+
+// 							$('#multipleRegions').trigger('chosen:updated');
+// 						});
+
+		//****************************************************************************************************
+
+		// $("#multipleRegions").on('change',function(evt,params){
+		// 	var $s = $(this);
+		// 	if (params.selected && params.selected == "All") 
+		//      {
+		//          // disable the select
+		// 			$("#multipleRegions").val("All").trigger("chosen:updated");
+		//          $s.children('option').not(':selected').each(function(){
+		//          $(this).attr('disabled','disabled');
+		//          });
+		//      }
+		//      else if (params.deselected && params.deselected == "All") 
+		//      {
+		//          // enable back
+		//          $s.children('option').each(function(){
+		//              $(this).removeAttr('disabled');
+		//          });
+		//      }
+
+		//  	  var regionList = [];
+		// 	  var regionId = $(this).val();
+		var data;
+		// 	  var formData = {};
+		// 	  formData['region_id'] = regionId;
+		// 	  finalData = JSON.stringify(formData);
+
+		// 	  var headerParam = {'clientdata':sessionStorage.getItem("userId")+"|"+sessionStorage.getItem("token")};
+		// 	  console.log(constants.getPayersId);
+		// 	  $.ajax({
+		// 	 		type : "POST",
+		// 	 		url : constants.getPayersId,
+		// 	 		dataType : "json",
+		// 	 		headers : headerParam,
+		// 	 		data : finalData,
+		// 	 		contentType:'application/json',
+		// 	 		crossDomain : true,
+		// 	 		success : function(data) {
+
+		// 	//			hideProgress();
+		// 	debugger;
+		// 	 			var responseStatus = data.responseStatus;
+		// 	 			if (responseStatus.statusCode == constants.success) {
+		// 	 				$('.chosen-search-input').append('<option > All</option>');
+		// 	 				contractData = data.responseData;
+		// 	 				for (var i = 0; i < contractData.contractsDataList.length; i++) {
+		// 	 					$('.chosen-search-input').append('<option >' + contractData.contractsDataList[i].contractRef + '</option>');
+		// 	 				}
+		// 	 			} else {
+		// 	 				commonError(responseStatus.statusCode);
+		// 	 			}
+		// 	 		},
+		// 	 		error : function(e) {
+		// 	 			hideProgress();
+		// 	 			commonError(constants.internalServerError);
+		// 	 		}
+		// 	 	});
+		// 	  $('#multipleRegions').trigger('chosen:updated');
+		// });
+
+		// $('#multipleRegions').on('change', function(evt, params) {
+		//     var $s = $(this);
+
+		//      if (params.selected && params.selected == "All") 
+		//      {
+		//          // disable the select
+		// 			$("#multipleRegions").val("All").trigger("chosen:updated");
+		//          $s.children('option').not(':selected').each(function(){
+		//          $(this).attr('disabled','disabled');
+		//          });
+		//      }
+		//      else if (params.deselected && params.deselected == "All") 
+		//      {
+		//          // enable back
+		//          $s.children('option').each(function(){
+		//              $(this).removeAttr('disabled');
+		//          });
+		//      }
+		//      // force chosen update
+		//      $('#multipleRegions').trigger('chosen:updated');
+
+		//      var regionList = [];
+		//      var regionId = findRegionId($('.regionDropdown').val());
+		//      regionList.push(regionId);
+		//      console.log(regionId);
+		//      debugger;
+		//yaha wo wala code call krna h tjhe, jaha se region name se region id nikalni h, and jaha se payer id nikalni h, niche wale triggers lov update kr denge
+
+		//      function getPayerIdFromRegionId() {
+		//     	 var multipleRegions =  jQuery('#multipleRegions').val();
+
+		//     	 regionList 
+		// 	//creating header
+		// 	var headerParam = {'clientdata':sessionStorage.getItem("userId")+"|"+sessionStorage.getItem("token")};
+		// 		debugger;
+		// 	$('.chosen-search-input').empty();
+		// 	contractData = null; 
+		// 	$.ajax({
+		// 		type : "GET",
+		// 		url : constants.getPayersIdByRegionId,
+		// 		dataType : "json",
+		// 		headers : headerParam,
+		// 		data : multipleRegions,
+		// 		crossDomain : true,
+		// 		success : function(data) {
+		// //			hideProgress();
+		// 			var responseStatus = data.responseStatus;
+		// 			if (responseStatus.statusCode == constants.success) {
+		// 				$('.chosen-search-input').append('<option > All</option>');
+		// 				contractData = data.responseData;
+		// 				for (var i = 0; i < contractData.contractsDataList.length; i++) {
+		// 					$('.chosen-search-input').append('<option >' + contractData.contractsDataList[i].contractRef + '</option>');
+		// 				}
+		// 			} else {
+		// 				commonError(responseStatus.statusCode);
+		// 			}
+		// 		},
+		// 		error : function(e) {
+		// 			hideProgress();
+		// 			commonError(constants.internalServerError);
+		// 		}
+		// 	});
+		// }
+
+		/* $('#multiplePayers').trigger('chosen:updated');
+		$('#multipleUsers').trigger('chosen:updated');
+		 */
+		//});
+		$('#StartDate').css('display', 'block');
+	</script>
+</body>
+</html>

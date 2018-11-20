@@ -1,0 +1,259 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin:0;
+	padding:0;
+	background-color: #f7f7f8;
+	font-family: 'Calibri';
+}
+
+.clear{clear:both;}
+
+div.side-by-side { width: 100%; margin-bottom: 1em; }
+div.side-by-side > div { float: left; width: 49%; }
+div.side-by-side > div > em { margin-bottom: 10px; display: block; }
+
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.darkBg{
+    position: fixed;
+    z-index: 10;
+    background: #000;
+    height: 100%;
+    width: 100%;
+    display: block;
+    opacity: 0.5;
+	bottom:0;
+    top:0;
+    left:0;
+    right:0;
+	display:none;
+}
+.popUpBox{
+    background: #fff;
+    position: absolute;
+    z-index: 11;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 400px;
+    height: 180px;
+    border-radius: 10px;	
+	display:none;
+}
+.popUpBox h2{
+	font-size: 21px;
+    color: #000;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    line-height: 50px;
+    padding: 0 0 0 17px;
+    background: #0a7155;
+    font-weight: normal;
+    border-radius: 9px 9px 0 0;
+    color: #fff;
+}
+
+.popUpBox p{
+	font-size: 15px;
+    margin: 10px 15px 0 15px;
+    line-height: 27px;
+	text-align: center;
+	
+}
+.popUpBox .ButtonBox {
+	padding: 7% 30% 1% 30%;
+	text-align: center;
+}
+.popUpBox .ButtonBox .popUpBtn{
+	    padding: 2% 9%;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #0a7155;
+    cursor: pointer;
+    text-decoration: none;
+    color: #231f20;
+    margin: 0 0 0 10px;
+}
+.popUpBox .ButtonBox .popUpBtn:hover{
+	background:#0a7155;
+	color:#fff;
+}
+.popUpBox input{
+	width: 90%;margin: 10px auto 0 11px;height: 25px;border-radius: 7px;border: 1px solid #ccc; padding-left:15px;	
+}
+.popUpBox input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+ font-size: 14px;
+font-weight: normal !important;
+font-family: 'Calibri';
+padding-left:2px;
+}
+.popUpBox input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ font-size: 14px;
+font-weight:normal !important;
+font-family: 'Calibri';
+padding-left:2px;
+}
+.popUpBox input::-moz-placeholder { /* Mozilla Firefox 19+ */
+ font-size: 14px;
+font-weight:normal !important;
+font-family: 'Calibri';
+padding-left:3px;
+}
+.popUpBox input::-ms-input-placeholder { /* Internet Explorer 10-11 */
+ font-size: 14px;
+font-weight:normal !important;
+font-family: 'Calibri';
+padding-left:2px;
+}
+
+
+
+
+input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+ font-size: 20px;
+font-weight: normal !important;
+font-family: 'Calibri';
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ font-size: 20px;
+font-weight:normal !important;
+font-family: 'Calibri';
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+ font-size: 20px;
+font-weight:normal !important;
+font-family: 'Calibri';
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ font-size: 20px;
+font-weight:normal !important;
+font-family: 'Calibri';
+}
+.Wrapper {
+	width: 489px;
+	margin: 0px auto;
+}
+.gail-logo {
+	display: block;
+	text-align:center;
+	margin:35px auto 13px auto;
+	text-decoration:none;
+}
+.gail-logo img{border:none;}
+.gail-logo .gailTaglin1{
+	font-size:32px;
+	color:#231f20;
+	margin:0;
+	padding:0;
+}
+.gail-logo .gailTaglin2{
+	font-size:20px;
+	color:#231f20;
+	margin:0;
+	padding:0;
+}
+.gail-logo .gailTaglin2 span{color:#3fa2da;}
+
+.formBox {
+	width: 100%; 
+	margin:60px 0 0 0;
+}
+.formBox  h2{
+	color:#3f3f3f;
+	font-size:32px;
+	text-align:center;
+	margin:0 0 20px 0;
+	padding:0;
+	font-weight:normal;
+}
+.formBox .FormField{
+		
+}
+.formBox .FormField input.username{
+	background: #fff;
+    border: 1px solid #ccc;
+    width: 97%;
+    height: 60px;
+    border-radius: 10px 10px 0 0;
+	padding: 0 0 0 13px;
+    line-height: 1.6;
+	font-size: 18px;
+	color:#3f3f3f;
+}
+.formBox .FormField input.username:focus{
+	
+	outline: none;
+}
+.formBox .FormField input.password:focus{
+	
+	outline: none;
+}
+.formBox .FormField input.password{
+	background: #fff;
+    border: 1px solid #ccc;
+    width: 97%;
+    height: 60px;
+    border-radius: 0 0 10px 10px;
+	border-top: none;
+	padding: 0 0 0 13px;
+    line-height: 1;
+	font-size: 18px;
+	color:#3f3f3f;
+}
+.formBox .FormField .submitBtn{
+	background-image: url(../images/nextBtn.png);
+	background-repeat: no-repeat;
+	display: block;
+	height: 46px;
+	width: 46px;
+	position: relative;
+    margin: -55px 0 0px 428px;
+		
+}
+.formBox .FormField p.Rememberme{
+	font-size:20px;	
+	color:#3f3f3f;
+	text-align: center;
+}
+.formBox .FormField p.Rememberme .chkbox{
+	height: 23px;
+    width: 23px;
+	top: 5px;
+    position: relative;
+	border-radius: 6px;
+}
+.borderbotton{ background:#ccc; height:1px; margin: 0 79px;}
+.formBox .FormField a.forgotPassword{
+    color: #3f3f3f;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    margin: 29px 147px 0 147px;
+    display: block;
+    text-decoration: none;
+}
+
+.playStoreLogo{
+	 display: block;
+     margin-left: 650px;
+    margin-top: 30px;
+    margin-right: auto;
+    width: 50%;
+     
+}
+.footer{
+	text-align: center;
+    font-size: 14px;
+    color: #626262;
+    margin-top: 100px;}

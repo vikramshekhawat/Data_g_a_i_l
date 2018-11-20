@@ -1,0 +1,1149 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+{
+	margin:0;
+	padding:0;
+	background-color: #f7f7f8;
+	font-family: 'Calibri';
+}
+.displayNone{display:none;}
+#UpdateData{display:none;}
+.clear { clear:both; }
+.darkBg{
+    position: absolute;
+    z-index: 10;
+    background: #000;
+    height: 100%;
+    width: 100%;
+    display: block;
+    opacity: 0.5;
+	bottom:0;
+    top:0;
+    left:0;
+    right:0;
+	display:none;
+}
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+.content {
+  padding: 16px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.sticky + .content {
+  padding-top: 102px;
+}
+.tabContent{
+	display: none;
+}
+.popUpBox{
+    background: #fff;
+    position: absolute;
+    z-index: 11;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 30%;
+    height: 180px;
+    border-radius: 10px;	
+	display:none;
+}
+.popUpBox h2{
+	font-size: 21px;
+    color: #000;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    line-height: 50px;
+    padding: 0 0 0 17px;
+    font-weight: normal;
+}
+.popUpBox p{
+	font-size: 15px;
+    margin: 10px 15px 0 15px;
+    line-height: 27px;
+}
+.popUpBox .ButtonBox {
+	padding: 16% 30%;
+}
+.popUpBox .ButtonBox .popUpBtn{
+	padding: 8px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid #0a7155;
+    cursor: pointer;
+    text-decoration: none;
+    color: #231f20;
+}
+.popUpBox .ButtonBox .popUpBtn:hover{
+	background:#0a7155;
+	color:#fff;
+}
+input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+ font-size: 20px;
+font-weight: normal !important;
+font-family: 'Calibri';
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ font-size: 20px;
+font-weight:normal !important;
+font-family: 'Calibri';
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+ font-size: 20px;
+font-weight:normal !important;
+font-family: 'Calibri';
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ font-size: 20px;
+font-weight:normal !important;
+font-family: 'Calibri';
+}
+.headerMC { }
+.headerMC .gail-logo
+{
+	display: block;
+	text-align:center;
+	margin: 12px 0 13px 15px;
+	text-decoration:none;
+	float:left;
+}
+.headerMC .gail-logo img { border:none; }
+.headerMC .gail-logo .gailTaglin1
+{
+	font-size:23px;
+	color:#231f20;
+	margin:0;
+	padding:0;
+}
+.headerMC .gail-logo .gailTaglin2
+{
+	font-size:15px;
+	color:#231f20;
+	margin:0;
+	padding:0;
+}
+.headerMC .gail-logo .gailTaglin2 span { color:#3fa2da; }
+.headerMC .dropRight
+{
+	float: right;
+	margin: 30px 12px 0 0;
+}
+.headerMC .dropRight .userName { float:right; }
+.headerMC .dropRight .userName .user
+{
+	font-size:20px;
+	color:#3f3f3f;
+	margin:0;
+}
+.headerMC .dropRight .userName .title
+{
+	font-size:20px;
+	color:#ccc;
+	margin:0;
+}
+.headerMC .dropDownMenu { 
+	float:right;
+	padding: 0 0 0 17px;
+	cursor:pointer;
+}
+.headerMC .topDropDown{
+	background: #fff;
+    position: absolute;
+    right: 1px;
+    margin-top: 51px;
+    width: 150px;
+    z-index: 10;
+    box-shadow: 0px 0px 4px #ccc;
+	display:none;
+
+}
+.headerMC .topDropDown .arrowDrop{
+	position: relative;
+    top: -20px;
+    float: right;
+    margin-right: 9px;
+}
+.headerMC .topDropDown ul{margin:0; padding:0; list-style-type:none;}
+.headerMC .topDropDown ul li{border-bottom:1px solid #ccc;}
+.headerMC .topDropDown ul li a{
+	text-decoration: none;
+    color: #000;
+    display: block;
+    padding: 10px;	
+}
+.headerMC .topDropDown ul li a:hover{
+	background:#eee;	
+}
+.wrapperMC{
+	padding: 0 19px;
+}
+.wrapperMC .left{
+	float:left;
+	width: 20%;	
+	position: relative;
+    z-index: 3;
+	padding-top: 50px;
+}
+.wrapperMC .left a.tabMC{
+	border-bottom: 1px solid #ccc;
+	display: block;
+    height: 62px;
+	text-decoration: none;
+    color: #828282;
+	font-size: 1.5vw;
+    line-height: 3;
+	padding: 0 0 0 25px;
+	border-top:1px solid #f7f7f8;
+	border-bottom:1px solid #ccc;
+	border-left:6px solid #f7f7f8;
+	border-right:none;
+}
+.wrapperMC .left a.arrow{
+	background:url(../images/tab-arrow.png) no-repeat;
+	background-position: right 10px top 23px;
+}
+.wrapperMC .left a.tabMC span.arroIcon{
+	background:url(../images/tab-arrow.png) no-repeat top left;
+	display: inline-block;
+    height: 14px;
+    width: 7px;
+    position: relative;
+    top: 1px;
+    right: -37%;
+}
+.wrapperMC .left a.tabMC span.arroIcon2{
+	background:url(../images/tab-arrow.png) no-repeat top left;
+	display: inline-block;
+    height: 14px;
+    width: 7px;
+    position: relative;
+    top: 1px;
+    right: -45%;
+}
+.wrapperMC .left a.tabMC span.iconNominate{
+	background:url(../images/nominate.png) no-repeat top left;	
+	display: inline-block;
+    height: 29px;
+    width: 28px;
+    position: relative;
+    top: 7px;
+    left: -10px;
+}
+.wrapperMC .left a.tabMC span.seller{
+	background:url(../images/nominate.png) no-repeat top left;	
+	display: inline-block;
+    height: 29px;
+    width: 28px;
+    position: relative;
+    top: 7px;
+    left: -10px;
+}
+.wrapperMC .left a.tabMC span.downloadReport{
+	background:url(../images/download-icon.png) no-repeat top left;	
+	display: inline-block;
+    height: 29px;
+    width: 32px;
+    position: relative;
+    top: 7px;
+    left: -10px;
+}
+.wrapperMC .left a.tabMC span.uploadData{
+	background:url(../images/uploaddata.png) no-repeat top left;	
+	display: inline-block;
+    height: 29px;
+    width: 32px;
+    position: relative;
+    top: 7px;
+    left: -10px;
+}
+.wrapperMC .left a.tabMC span.display{
+	background:url(../images/display.png) no-repeat top left;	
+	display: inline-block;
+    height: 31px;
+    width: 31px;
+    position: relative;
+    top: 9px;
+    left: -10px;
+}
+.wrapperMC .left a.tabMC span.ticker{	
+	background:url(../images/ticker.png)no-repeat top left;	
+	display: inline-block;
+    height: 29px;
+    width: 32px;
+    position: relative;
+    top: 7px;
+    left: -10px;
+}
+.wrapperMC .left a.tabMC span.pushNotificationTab{	
+	background:url(../images/notification.png)no-repeat top left;	
+	display: inline-block;
+    height: 29px;
+    width: 32px;
+    position: relative;
+    top: 7px;
+    left: -10px;
+}
+.wrapperMC .left a.tabMC:hover{
+	
+	color:#000;
+	border-top:1px solid #0a7155;
+	border-bottom:1px solid #0a7155;
+	border-left:6px solid #0a7155;
+	border-right:none;
+	background-color: #fff;
+	background-image:  url(../images/tab-arrow.png);
+	background-repeat: no-repeat;
+	background-position: right 10px top 23px;
+}
+.wrapperMC .left a.tabMC:focus{
+	border:none;
+}
+.wrapperMC .left a.tabMC.active{
+	font-size:1.5vw;
+	color:#000;
+	border-top:1px solid #0a7155;
+	border-bottom:1px solid #0a7155;
+	border-left:6px solid #0a7155;
+	border-right:none;
+	background-color: #fff;
+	background-image:  url(../images/tab-arrow.png);
+	background-repeat: no-repeat;
+	background-position: right 10px top 23px;
+}
+.wrapperMC .right{
+	float:left;	
+	width:75%;
+	height:580px;
+	background: #fff;
+    border: 1px solid #0a7155;
+	left: -1px;
+    z-index: 2;
+	position:relative;
+}
+.wrapperMC .right h2.heading{
+	color: #d52b40;
+    font-size: 34px;
+    margin: 5% 0 0 0;
+    line-height: 48px;
+    text-align: center;
+    font-weight: normal;
+}
+.wrapperMC .right p.comName{
+	color: #231f20;
+    font-size: 31px;
+    margin: 0;
+    line-height: 48px;
+    text-align: center;
+}
+.wrapperMC .right .formBoxDateTime{
+	width: 47%;
+    margin: 5% auto 0 auto;
+}
+.wrapperMC .right .formBoxDateTime .FormField{
+		
+}
+.wrapperMC .right .formBoxDateTime .FormField input.username{
+	background: #fff;
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 60px;
+    border-radius: 10px 10px 0 0;
+	padding: 0 0 0 13px;
+    line-height: 1.6;
+	font-size: 18px;
+	color:#3f3f3f;
+	background:url(../images/calender-icon.png) no-repeat 95% 16px;
+	cursor:pointer;
+}
+.wrapperMC .right .formBoxDateTime .FormField input.password{
+	background: #fff;
+    border: 1px solid #ccc;
+    width: 97%;
+    height: 60px;
+    border-radius: 0 0 10px 10px;
+	border-top: none;
+	padding: 0 0 0 13px;
+    line-height: 1;
+	font-size: 18px;
+	color:#3f3f3f;
+	cursor:pointer;
+	background:url(../images/arrow1.png) no-repeat 95% 26px;
+}
+.wrapperMC .right .formBoxDateTime .ComnBtn{
+	padding: 12px;
+    font-size: 19px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid #0a7155;
+    text-decoration: none;
+    color: #231f20;
+    display: block;
+    text-align: center;
+    margin-top: 6%;
+	font-weight: bold;
+}
+.wrapperMC .right .formBoxDateTime .ComnBtn:hover{
+	background:#0a7155;
+	color:#fff;
+}
+
+.wrapperMC .right .formBoxDateTime .ComnBtn:focus{
+	background:#0a7155;
+	color:#fff;
+}
+.wrapperMC .right .formBoxDateTime .ComnBtn.activebtn{
+	background:#0a7155;
+	color:#fff;
+}
+.ManagementCfooter{
+	text-align: center;
+    font-size: 14px;
+    color: #626262;
+    margin-top: 1%;}
+.FormField .SelectContractType{
+	position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    margin-top: -9px;
+    width: 467px;
+    z-index: 2;
+	display:none;
+}
+.FormField .SelectContractType ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+.FormField .SelectContractType ul li{
+	border-bottom: 1px solid #ccc;
+}
+.FormField .SelectContractType ul li a{
+	display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #231f20;
+    font-size: 18px;
+}
+.FormField .SelectContractType ul li a:hover{
+	background:#ccc;
+}
+.wrapperMC .right h2.gtaName{
+	font-size: 15px;
+    text-align: right;
+    font-weight: normal;
+    padding: 0px 32px 0 0;
+	margin: 0;
+}
+.wrapperMC .right h2.gtaDate{
+	font-size: 15px;
+    text-align: right;
+    font-weight: normal;
+    padding: 28px 32px 0 0;
+	margin: 0;
+}
+.wrapperMC .right h2.sellerDate1{
+	font-size: 15px;
+    text-align: right;
+    font-weight: normal;
+    padding: 28px 32px 0 0;
+	margin: 0;
+}
+
+.wrapperMC .right .gtaTblBox{
+	border: 1px solid #ccc;
+    margin: 15px;
+    border-radius: 10px;
+}
+.wrapperMC .right .gtaTblBox h3{ 
+	background:url(../images/h2-bg.png) repeat-x;
+	color: #fff;
+    padding: 8px 0 11px 12px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+	border-radius: 9px 9px 0 0;
+}
+.wrapperMC .right .gtaTblBox h3 span{
+	float: right;
+    margin-right: 12px;
+}
+.wrapperMC .right .gtaTblBox .tblGTA{
+	height: 252px;
+    overflow-y: auto;
+}
+.wrapperMC .right .gtaTblBox .tblGTA th{
+	font-size:17px;
+	font-weight:normal;
+	border-right: 1px solid #ccc;
+	padding: 7px;
+	border-bottom: 1px solid #ccc;
+}
+.wrapperMC .right .gtaTblBox .tblGTA td{
+	font-size:14px;
+	font-weight:normal;
+	border-right: 1px solid #ccc;
+	padding: 7px;
+	color:#000;
+}
+.wrapperMC .right .gtaTblBox .tblGTA td.focus{
+	color:#000;
+	
+
+}
+.wrapperMC .right .gtaTblBox .tblGTA th:last-child,.wrapperMC .right .gtaTblBox .tblGTA td:last-child{
+	border-right:none;
+}
+.wrapperMC .right .gtaTblBox .tblGTA tr td{
+	border-bottom: 1px solid #ccc;
+	
+}
+.wrapperMC .right .gtaTblBox .tblGTA .impIcon{
+	background:url(../images/Imp-icon.png) no-repeat 0px 0px;
+	display: inline;
+    width: 16px;
+    height: 15px;
+	float: right;
+	position: relative;
+    top: 4px;
+	cursor: pointer;	
+}
+.wrapperMC .right .gtaTblBox .tblGTA .impIcon:hover{
+	background:url(../images/Imp-icon -hover.png) no-repeat 0px 0px;
+}
+
+
+.wrapperMC .right .gtaTblBox .tblGTA .editIcon{
+	background:url(../images/editprofile-edit-icon.png) no-repeat 0px 0px;
+	display: inline;
+    width: 16px;
+    height: 15px;
+	float: right;
+	position: relative;
+    top: 4px;
+    right:4px;
+	cursor: pointer;	
+}
+.wrapperMC .right .gtaTblBox .tblGTA .editIcon:hover{
+	/*background:url(../images/editprofile-edit-icon -hover.png) no-repeat 0px 0px;*/
+}
+.wrapperMC .right .gtaTblBox .tblGTA tr td input{
+	border:none;
+	width: 100%;	
+}
+.wrapperMC .right .gtaTblBox .tblGTA tr td input[type=number]::-webkit-inner-spin-button, 
+.wrapperMC .right .gtaTblBox .tblGTA tr td input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.wrapperMC .right .gtaTblBox .tblGTA tr td input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+ font-size: 17px;
+font-weight: normal !important;
+font-family: 'Calibri';
+line-height:18px
+}
+.wrapperMC .right .gtaTblBox .tblGTA tr td input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ font-size: 17px;
+font-weight:normal !important;
+font-family: 'Calibri';
+line-height:18px
+}
+.wrapperMC .right .gtaTblBox .tblGTA tr td input::-moz-placeholder { /* Mozilla Firefox 19+ */
+ font-size: 17px;
+font-weight:normal !important;
+font-family: 'Calibri';
+line-height:18px
+}
+.wrapperMC .right .gtaTblBox .tblGTA tr td input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ font-size: 17px;
+font-weight:normal !important;
+font-family: 'Calibri';
+line-height:18px
+}
+.wrapperMC .right .gtaTblBox .ComnBtn{
+	padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid #0a7155;
+    text-decoration: none;
+    color: #231f20;
+    display: block;
+    text-align: center;
+    margin-top: 6%;
+    font-weight: normal;
+    cursor: pointer;
+    float: right;
+}
+.wrapperMC .right .gtaTblBox .ComnBtn:hover{
+	background:#0a7155;
+	color:#fff;
+}
+
+
+.wrapperMC .right .gtaTblBox .ComnSaveBtn {
+    padding: 2px 17px;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #0a7155;
+    /*border: 1px solid #0a7155;*/
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    text-align: center;
+    margin-top: 6%;
+    font-weight: normal;
+    cursor: pointer;
+    float: right;
+}
+.wrapperMC .right .gtaTblBox .ComnSaveBtn:hover{
+    background:#0a7155;
+    color:#fff;
+}
+
+
+.wrapperMC .right .downloadReport{
+	padding:45px 30px 45px 10%;
+}
+.wrapperMC .right .downloadReport .downloadReportRow{
+	margin: 0% 0 25px 0;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .leftdis{
+	float:left;
+	width: 23%;
+	line-height: 33px;
+	font-size: 1.5vw;
+}
+
+.wrapperMC .right .downloadReport .downloadReportRow .innerleftdis{
+    float:left;
+    width: 29%;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .innerrightdis{
+    float:left;
+    width: 48%;
+}
+/*@media (min-width: 1332px) {
+    .wrapperMC .right .downloadReport .downloadReportRow .innerrightdis{
+	float:left;
+	width: 48%;
+}*/
+}
+
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis{
+	float:left;
+	width: 60%;
+	  
+}
+.wrapperMC .right .downloadReport .downloadReportRow .leftdis p{
+    font-size: 19px;
+	margin:0;
+	
+	
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .btnDownloadReport {
+	padding: 6px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid #0a7155;
+    text-decoration: none;
+    color: #231f20;
+    display: block;
+    text-align: center;
+    font-weight: normal;
+    cursor: pointer;
+	margin: 0 18px 0 0;
+	float:left;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .btnDownloadReport.activeBtn2{background:#0a7155;
+	color:#fff;}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .btnDownloadReport:last-child {
+	margin:0 0 0 -7px;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .btnDownloadReport:hover {
+	background:#0a7155;
+	color:#fff;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .btnDownloadReport.activeBtn2{background:#0a7155;
+	color:#fff;}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .downloadReportCalender{
+	background-image:url(../images/calender-icon-DR-black.png);
+	background-repeat: no-repeat;
+    background-color: #fff;
+    background-position: left 16px top 7px;
+    border-radius: 10px;
+    display: block;
+    padding: 10px 26px 10px 53px;
+    color: #000;
+    cursor: pointer;
+    border: 1px solid #0a7155;
+	float:left;
+	margin-right:2%;
+	    width: 45%;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .downloadReportCalender:hover{
+	background-color:#0a7155;
+	color:#fff;
+	background-image:url(../images/calender-icon-DR-white.png);
+	background-repeat: no-repeat;
+	background-position: left 16px top 7px;
+	
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .multipleDateWidth{
+	padding: 10px 46px 10px 75px;
+    background-position: left 39px top 7px;
+    margin-left: 10px;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .multipleDateWidth:hover{
+	padding: 10px 46px 10px 75px;
+    background-position: left 39px top 7px;
+    margin-left: 10px;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .SelectMenuDR{
+	border-radius: 10px;
+    display: block;
+    padding: 0px 10px 0px 21px;
+    color: #ccc;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    text-align: left;
+    width: 245px;
+    float: left;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .SelectMenuDR .dropText{
+	line-height: 35px;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .SelectMenuDR .arrowRight{
+	background-image:url(../images/DRarrowDown.png);	
+	display: block;
+    height: 13px;
+    background-repeat: no-repeat;
+    float: right;
+    width: 35px;
+    position: relative;
+    top: 0;
+    border-left: 1px solid #ccc;
+    padding: 13px 7px 22px 5px;
+    background-position: left 9px top 12px;
+}
+.wrapperMC .right .downloadReport  h2.DRheading {
+    color: #d52b40;
+    font-size: 2.5vw;
+    margin: 2% 0 2% 0;
+    line-height: 48px;
+    text-align: center;
+    font-weight: normal;
+}
+
+
+.wrapperMC .right .downloadReport .DRBTNBox{
+	width: 54%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.wrapperMC .right .downloadReport .DRBTNBox a.btnDR{
+	padding: 11px 20px;
+    font-size: 1.3vw;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid #0a7155;
+    text-decoration: none;
+    color: #231f20;
+    display: block;
+    text-align: center;
+    font-weight: normal;
+    cursor: pointer;
+    margin: 0 18px 7px 0;
+	float: left;
+    width: 43%;
+}
+.wrapperMC .right .downloadReport .DRBTNBox a.btnDR:hover{
+	background:#0a7155;
+	color:#fff;
+}
+.wrapperMC .right .downloadReport .DRBTNBox a.btnDR.active{
+	background:#0a7155;
+	color:#fff;
+}
+select.dropdown {
+     -webkit-appearance: none;       
+     -moz-appearance: none;    
+     appearance: none;
+     background: url(../images/DRarrowDown3.png)  no-repeat;         
+	background-position: right 9px top 8px;
+    background-size: 17px 17px;
+    width: 44%;
+    height: 37px;
+    border-radius: 10px;
+	padding: 0 0 0 17px;
+    color: #000;
+	border:1px solid #0a7155;
+    
+}
+select.dropdown::-ms-expand {
+    display: none;
+	width:25px
+}
+select.dropdownMC{
+	-webkit-appearance: none;       
+	-moz-appearance: none;    
+	appearance: none;
+	background: url(../images/DRarrowDown3.png)  no-repeat;         
+	    background-position: right 24px top 23px;
+    background-size: 20px 20px;
+    margin-left: 0;
+    width: 100%;
+    height: 60px;
+    border-radius: 0 0 10px 10px;
+    padding: 0 0 0 17px;
+    color: #000;
+    border: 1px solid #ccc;
+    border-top: none;
+    
+}
+select::-ms-expand {
+    display: none;
+	width:25px
+}
+option.gsa{
+background:#fff;
+height:30px;	
+display:block;
+
+}
+.Single{
+    line-height: 33px;
+    font-size: 1.5vw;
+	font-weight:normal;
+	color: #d52b40;
+}
+.SingleDate{
+	width: 15px;
+    height: 15px;
+    top: 2px;
+    position: relative;
+    left: 10px;
+}
+.Multiple{
+	line-height: 33px;
+    font-size: 1.5vw;
+	font-weight:normal;
+	margin-left: 57px;
+	color: #d52b40;
+}
+.MultipleDate{
+	width: 15px;
+    height: 15px;
+    top: 2px;
+    position: relative;
+    left: 10px;
+}
+.UploadDataButtonBox{
+	text-align:center;
+	margin-top: 35px;
+}
+.UploadDataButtonBox input[type=file]{
+	margin-left: 127px;
+    color: #0a7155;
+	font-size:15px;
+}
+.UploadDataButtonBox a.detailsBTN{
+	border: 1px solid #0a7155;
+    font-size: 18px;
+    padding: 10px 17px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: -2px;
+	color:#0a7155;
+	text-decoration:none;
+}
+.UploadDataButtonBox a.detailsBTN:nth-child(2){
+	border-radius: 0;
+}
+.UploadDataButtonBox a.detailsBTN:nth-child(1){
+	border-radius: 10px  0 0  10px;
+}
+.UploadDataButtonBox a.detailsBTN:nth-child(3){
+	border-radius: 0;
+}
+.UploadDataButtonBox a.detailsBTN:nth-child(4){
+	border-radius: 0 10px 10px 0;
+}
+.UploadDataButtonBox a.detailsBTN:hover{
+	background-color:#0a7155;
+	color:#fff;
+}
+.UploadDataButtonBox a.detailsBTN.activeDetails{
+	background-color:#0a7155;
+	color:#fff;
+}
+h2.uploadDateHedding{
+	font-size: 1.8vw;
+    text-align: center;
+}
+.UploadDataButtonBox .fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+	border: 1px solid #0a7155;
+	font-size:18px;
+	left: 100px;
+	float: left;
+}
+.UploadDataButtonBox .fileUpload:hover{
+	background-color:#0a7155;
+	color:#fff;
+}
+.UploadDataButtonBox .fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.btn-primary {
+	color:#fff;
+	background-color:#fff;
+	border-color:#0a7155;
+	color:#0a7155;
+	border: 1px solid #0a7155;
+}
+.btn-primary:hover{
+	background-color:#0a7155;
+	color:#fff;
+}
+#UpdateData .UploadDataButtonBox1{
+	    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 50px 50px 0;
+}
+#UpdateData .UploadDataButtonBox1 a.actionBtn{
+	border: 1px solid #0a7155;
+    font-size: 18px;
+    padding: 10px 17px;
+    border-radius: 10px;
+    display: inline-block;
+	margin: 0 0 0 10px;
+	color:#0a7155;
+	text-decoration:none;
+}
+#UpdateData .UploadDataButtonBox1 a.actionBtn:hover{
+	background-color:#0a7155;
+	color:#fff;
+}
+.btn {
+    padding: 10px 32px !important;
+    border-radius: 10px !important;
+}
+@media (max-width:768px) {
+	.wrapperMC .left a.tabMC{
+		padding: 0 ;
+		line-height: 5;
+	}
+	.wrapperMC .left a.tabMC span.downloadReport{
+		top: 14px;
+    	left: 5px;
+	}
+	.wrapperMC .left a.tabMC span.uploadData{
+		top: 12px;
+		left: 4px;
+	}
+	.wrapperMC .left a.tabMC span.ticker{
+		top: 12px;
+		left: 4px;
+	}
+	.wrapperMC .left a.tabMC span.pushNotificationTab{
+		top: 12px;
+		left: 4px;
+	}
+	.wrapperMC .right .downloadReport .DRBTNBox{
+		width: 59%;
+	}	
+}
+@media (max-width:1024px) {
+	.wrapperMC .left a.tabMC{
+		padding: 0;
+    	line-height: 4;
+	}
+	.wrapperMC .left a.tabMC span.downloadReport{
+		top: 10px;
+   		left: 5px;
+	}
+	.wrapperMC .left a.tabMC span.uploadData{
+		top: 12px;
+		left: 4px;
+	}
+	.wrapperMC .left a.tabMC span.ticker{
+		top: 12px;
+		left: 4px;
+	}
+	.wrapperMC .left a.tabMC span.pushNotificationTab{
+		top: 12px;
+		left: 4px;
+	}
+	.wrapperMC .right .downloadReport .DRBTNBox{
+		width: 59%;
+	}	
+}
+
+.wrapperMC .right .gtaTblBox .tblGTA th {
+    font-size: 17px;
+    font-weight: normal;
+    border-right: 1px solid #ccc;
+    padding: 7px;
+    border-bottom: 1px solid #ccc;
+    height: 0px;
+    line-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: transparent;
+    border: none;
+    white-space: nowrap;
+}
+.wrapperMC .right .gtaTblBox .tblGTA th:nth-child(1) div {
+    margin-left: -8px;
+    padding-left: 3px;
+    text-indent: 6px;
+}
+.wrapperMC .right .gtaTblBox .tblGTA th div {
+    position: absolute;
+    background: #F2F3F3;
+    color: #000;
+    padding: 7px 13px;
+    top: -1px;
+    margin-left: -8px;
+    line-height: normal;
+    border: 1px solid #ccc;
+    box-sizing: content-box;
+    
+}
+.wrapperMC .right .gtaTblBox .tblGTA th:last-child div{
+	padding-right: 0px;
+}
+.wrapperMC .right .gtaTblBox{
+	border-radius: 0px; 
+	position: relative;
+	margin-top: 0px;
+}
+.wrapperMC .right .gtaTblBox .tblGTA{
+	margin-top: 31px;
+}
+.data-head-h3{
+	    margin:20px 15px 0px 15px;
+    background: #1FA47F;
+    color: #fff;
+    padding: 5px 12px;
+    
+    border-radius: 5px 5px 0px 0px;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .startDate{
+	background-image:url(../images/calender-icon-DR-black.png);
+	background-repeat: no-repeat;
+    background-color: #fff;
+    background-position: left 16px top 7px;
+    border-radius: 10px;
+    display: block;
+    padding: 10px 26px 10px 53px;
+    color: #000;
+    cursor: pointer;
+    border: 1px solid #0a7155;
+	float:left;
+	margin-right:2%;
+	    width: 45%;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .startDate:hover{
+	background-color:#0a7155;
+	color:#fff;
+	background-image:url(../images/calender-icon-DR-white.png);
+	background-repeat: no-repeat;
+	background-position: left 16px top 7px;
+	
+}.wrapperMC .right .downloadReport .downloadReportRow .rightdis .endDate{
+	background-image:url(../images/calender-icon-DR-black.png);
+	background-repeat: no-repeat;
+    background-color: #fff;
+    background-position: left 16px top 7px;
+    border-radius: 10px;
+    display: block;
+    padding: 10px 26px 10px 53px;
+    color: #000;
+    cursor: pointer;
+    border: 1px solid #0a7155;
+	float:left;
+	margin-right:2%;
+	    width: 45%;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis .endDate:hover{
+	background-color:#0a7155;
+	color:#fff;
+	background-image:url(../images/calender-icon-DR-white.png);
+	background-repeat: no-repeat;
+	background-position: left 16px top 7px;
+	
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis input.tickerText{
+	background: #fff;
+    border: 1px solid #ccc;
+    width: 45%;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+	padding: 0 0 0 13px;
+    line-height: 1;
+	font-size: 18px;
+	color:#3f3f3f;
+	background:no-repeat 95% 16px;
+}
+.wrapperMC .right .downloadReport .downloadReportRow .rightdis input.pushNotificationText{
+	background: #fff;
+    border: 1px solid #ccc;
+    width: 45%;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+	padding: 0 0 0 13px;
+    line-height: 1;
+	font-size: 18px;
+	color:#3f3f3f;
+	background:no-repeat 95% 16px;
+}
+
+.wrapperMC .right .gtaTblBox .tblGTA tr td input.editable{
+	border: inherit;
+	width: 100%;
+	border-radius: 5px 5px 5px 5px;
+	
+}
+
+
+
+
+
+
+.wrapperMC .right .downloadReport .downloadReportRow .innerleftdis{
+    float:left;
+    width: 100%;
+    
+}
+.wrapperMC .right .downloadReport .downloadReportRow .innerrightdis{
+    float:left;
+    width: 100%;
+}

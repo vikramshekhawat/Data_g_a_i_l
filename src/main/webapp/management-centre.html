@@ -1,0 +1,602 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Gail (India) Limited</title>
+<link href="font/font.css" rel="stylesheet" type="text/css" />
+<link href="css/ManagementCentre.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/marquee.css" rel="stylesheet" />
+<link href="css/example.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css"
+	href="css/jquery.datetimepicker.css" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="css/daterangepicker.css" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="css/component.css" />
+<script src="js/common.js"></script>
+<script src="js/messages.js"></script>
+<script src="js/html-constants.js"></script>  
+<script src="js/document-init.js"></script> 
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.blink.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('.gtaDataTable').DataTable( {
+        "scrollY": 200,
+        "scrollX": true
+    } );
+} );
+</script>
+
+
+
+
+<style>.marquee-sibling{background-color: #FFD94F;
+    color: #E63746;
+     font-weight: bold; 
+    font-size: 14px;
+	}</style>
+	
+	
+</head>
+
+<body onLoad="configureManagementPage()">
+	<div class="wrapperMC">
+		<div class="left">
+			<a href="#" class="tabMC arrow active" id="NominateTab"><span class="iconNominate"></span>Nominate</a> 
+				<a href="#" class="tabMC arrow" id="DisplayTab"><span class="display"></span>Display</a> 
+				<a href="#" class="tabMC arrow" id="SellerTab"><span class="seller"></span>Seller Nominations</a>
+
+		</div>
+		<div class="simple-marquee-container">
+			<div class="marquee-sibling">
+				<span class="notice"> Important Notice </span>
+			</div>
+			<marquee scrollamount="3">
+			<ul class="marquee-content-items" id="tickerText">
+				</ul>
+			</marquee>
+		<!-- 	<div class="marquee">
+				<ul class="marquee-content-items" id="tickerText">
+				</ul>
+			</div> -->
+		</div>
+		<div id="nominate">
+			<div class="right selectNominationDetail ">
+				<h2 class="heading">GAIL Nomination System Welcomes</h2>
+				<p class="comName"></p>
+				<!--Rajasthan Gas Limited -->
+				<div class="formBoxDateTime">
+					<div class="FormField">
+						<input type="text" id="datetimepicker1"
+							class="datepicker username nominationDate"
+							placeholder="Select Date" readonly>
+					</div>
+					<div class="FormField">
+						<select name="" class="dropdownMC selectedType">
+							<option>-Please Select-</option>
+							<option class="gsa">GSA</option>
+							<option class="gta">GTA</option>
+						</select>
+						<!--<input type="text" placeholder="Select Contract Type" class="password selectedType" id="SelectContractType">
+                                    <div class="SelectContractType">
+                                    	<ul>
+                                        	<li><a href="#" class="gsa">GSA</a></li>
+                                            <li><a href="#" class="gta">GTA</a></li>
+                                        </ul>
+                                    </div>-->
+					</div>
+					<a href="#" class="ComnBtn"
+						onClick="getContractsOrNominationsUrl()">Continue</a>
+				</div>
+			</div>
+
+			<div class="right gsaNominationDetailTable displayNone">
+				<h2 class="gtaDate">
+					Gas Date : <span>10/06/2016</span>
+				</h2>
+				<h2 class="gtaName"></h2>
+				<!--Rajasthan Gas Limited -->
+				<h3 class="data-head-h3">GSA</h3>
+				<div class="gtaTblBox">
+					<div class="tblGTA">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0"
+							class="gsaDataTable">
+						</table>
+					</div>
+					<button type="submit" class="ComnBtn"
+						onClick="saveOrUpdateNomination()">Submit</button>
+					<button type="submit" class="ComnBtn" style="margin-right: 15px;"
+						onClick="goToSelectNominationDetail()">Back</button>
+				</div>
+			</div>
+
+
+
+			<div class="right gtaNominationDetailTable displayNone">
+				<h2 class="gtaDate">
+					Gas Date : <span>10/06/2016</span>
+				</h2>
+				<h2 class="gtaName"></h2>
+				<!--Rajasthan Gas Limited -->
+				<h3 class="data-head-h3">
+					GTA <span class="gtaUOM"></span>
+				</h3>
+				<div class="gtaTblBox">
+					<div class="tblGTA">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0"
+							class="gtaDataTable">
+
+
+						</table>
+					</div>
+					<button type="submit" class="ComnBtn"
+						onClick="saveOrUpdateNomination()">Submit</button>
+					<button type="submit" class="ComnBtn" style="margin-right: 15px;"
+						onClick="goToSelectNominationDetail()">Back</button>
+				</div>
+			</div>
+
+		</div>
+		
+		
+		<!-- Seller Tab  -->
+		<div id="seller" class="displayNone">
+			<div class="right sellerselectNominationDetail ">
+				<h2 class="heading">GAIL Nomination System Welcomes</h2>
+				<p class="comName"></p>
+				<!--Rajasthan Gas Limited -->
+				<div class="formBoxDateTime">
+					<div class="FormField">
+						<h3>Scheduled Quantities for consumers</h3>
+					</div>
+					<div class="FormField">
+						<input type="text" id="datetimepicker3" class="datepicker username sellerDate" placeholder="Select Date" readonly>
+					</div>
+					<a href="#" class="ComnBtn" onClick="getContractsSeller()">Continue</a>
+				</div>
+			</div>
+
+			<div class="right gtaSellerDetailTable displayNone">
+				<h2 class="sellerDate sellerDate1">
+					Gas Date : <span>20/06/2016</span>
+				</h2>
+				<h2 class="gtaName"></h2>
+				<!--Rajasthan Gas Limited -->
+				<h3 class="data-head-h3">
+					Scheduled Quantities<span class="gtaUOM"></span>
+				</h3>
+				<div class="gtaTblBox">
+					<div class="tblGTA">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0"
+							class="gtasellerDataTable">
+						</table>
+					</div>
+					
+					<button type="submit" class="ComnBtn" style="margin-right: 15px;"
+						onClick="goToSellerMainPage()">Back</button>
+				</div>
+			</div>
+		</div>
+		
+		<!-- DIsplay TAb -->
+
+		<div id="display" class="displayNone">
+
+			<div class="right displayNominationDetail">
+				<div>
+					<h2 class="heading">GAIL Nomination System Welcomes</h2>
+					<p class="comName"></p>
+					<!--Rajasthan Gas Limited -->
+					<div id="downloadReport" class="downloadReport">
+						<div class="downloadReportRow" id="chkBoxChk">
+							<div class="leftdis">Select Date</div>
+							<div class="rightdis">
+								<label class="Single">Single Date</label> <input name="single"
+									type="radio" value="" class="SingleDate" /> <label
+									class="Multiple">Multiple Date</label> <input name="single"
+									type="radio" value="" class="MultipleDate" />
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="downloadReportRow displayNone" id="SingleDate">
+							<div class="leftdis">Select Single Date</div>
+							<div class="rightdis">
+								<input class="downloadReportCalender singleSelectedDate"
+									id="datetimepicker2" value="Single Date" readonly="readonly" />
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="downloadReportRow displayNone" id="MultipleDate">
+							<div class="leftdis">Select Multiple Date</div>
+							<div class="rightdis" style="width: 60%; float: left;">
+								<input class="downloadReportCalender fristMulSelectedDate"
+									id="datetimepicker2" value="From" readonly="readonly" /> <input
+									class="downloadReportCalender secondMulSelectedDate"
+									id="datetimepicker2" value="To" readonly="readonly" />
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="downloadReportRow" id="contractType">
+							<div class="leftdis">Select Contract Type</div>
+							<div class="rightdis">
+								<select name="" class="dropdown dinplayselectedType"
+									onchange="gerContractData(this.value)">
+									<option>-Please Select-</option>
+									<option class="gsa gsa1">GSA</option>
+									<option class="gta gta1">GTA</option>
+									<option class="both">Both</option>
+		                        </select>
+		                    </div>
+		                    <div class="clear"></div>
+		                </div>
+		                <div class="downloadReportRow">
+		                	<div class="leftdis">Select Contract</div>
+		                    <div class="rightdis">
+		                  <select name="" class="dropdown contractDropdown">
+		                        </select>
+		                    </div>
+		                    <div class="clear"></div>
+		                </div>
+	                    <div class="clear"></div>
+               			<h2 class="DRheading"></h2>
+              				<div class="DRBTNBox">
+							<a href="#" class="btnDR" onClick="getNominationsData()">Continue</a>
+						</div>
+	                </div>
+					<!-- <div class="formBoxDateTime">
+						<div class="FormField">
+							<input type="text" id="datetimepicker2" class="datepicker username displaynominationDate" placeholder="Select Date" readonly>
+						</div>
+						<div class="FormField">
+							<select name="" class="dropdownMC dinplayselectedType">
+								<option>-Please Select-</option>
+								<option class="gsa gsa1">GSA</option>
+								<option class="gta gta1">GTA</option>
+							</select>
+						</div>
+						<a href="#" class="ComnBtn" onClick="getNominationsData()">Continue</a>
+					</div> -->
+				</div>
+			</div>
+
+			<div class="right displayGsaNominationDetailTable displayNone">
+				<h2 class="gtaDate">
+					Gas Date : <span>10/06/2016</span>
+				</h2>
+				<h2 class="gtaName"></h2>
+				<!--Rajasthan Gas Limited -->
+				<h3 class="data-head-h3">GSA</h3>
+				<div class="gtaTblBox">
+					<div class="tblGTA">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0"
+							class="gsaDataDisplayTable">
+						</table>
+					</div>
+					<button type="submit" class="ComnBtn" style="margin-right: 15px;"
+						onClick="goBackSelectDateInDisplay()">Back</button>
+				</div>
+			</div>
+
+			<div class="right displayGtaNominationDetailTable displayNone">
+				<h2 class="gtaDate">
+					Gas Date : <span>10/06/2016</span>
+				</h2>
+				<h2 class="gtaName"></h2>
+				<!--Rajasthan Gas Limited -->
+					<h3 class="data-head-h3">
+						GTA <span class="gtaUOM"></span>
+					</h3>
+				<div class="gtaTblBox">
+					<div class="tblGTA">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0"
+							class="gtaDataDisplayTable">
+						</table>
+					</div>
+					<button type="submit" class="ComnBtn" style="margin-right: 15px;"
+						onClick="goBackSelectDateInDisplay()">Back</button>
+				</div>
+			</div>
+
+			<div class="right displayBothNominationDetailTable displayNone">
+				<h2 class="gtaDate">
+					Gas Date : <span>10/06/2016</span>
+				</h2>
+				<h2 class="gtaName"></h2>
+				<!--Rajasthan Gas Limited -->
+				<h3 class="data-head-h3"> All </h3>
+				<div class="gtaTblBox">
+					
+					<div class="tblGTA">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0"
+							class="bothDataDisplayTable">
+						</table>
+					</div>
+					<button type="submit" class="ComnBtn" style="margin-right: 15px;"
+						onClick="goBackSelectDateInDisplay()">Back</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="clear"></div>
+		<div class="ManagementCfooter">Privacy Policy | Copyright@2016
+			GAIL India Limited. All Rights Reserved</div>
+	</div>
+	<script type="text/jscript" src="js/jquery.datetimepicker.full.js"></script>
+	<script type="text/jscript" src="js/uiJquery.js"></script>
+	<script type="text/javascript" src="js/moment.js"></script>
+	<script type="text/javascript" src="js/daterangepicker.js"></script>
+	<script type="text/javascript" src="js/marquee.js"></script>
+	<script src="js/constants.js"></script>
+	<script src="js/management.js"></script>
+	<script src="js/processing.js"></script>
+	<script type="text/javascript">
+	
+
+
+	
+	
+	
+		var t = new Date();
+		var maxDate = new Date(t.getFullYear(), t.getMonth() + 2, 0, 23, 59, 59);
+
+$('.downloadReportCalender').datetimepicker({
+	lang:'ch',
+	timepicker:false,
+	format:'d-m-Y',
+	formatDate:'d-m-Y'
+	
+});
+/* $('.singleSelectedDate').datepicker({
+		dateFormat: 'dd-mm-yy',
+		minDate:"-3m",
+		maxDate:maxDate
+});
+
+$('.fristMulSelectedDate').datepicker({
+		dateFormat: 'dd-mm-yy',
+		minDate:"-3m",
+		maxDate:maxDate
+});
+
+$('.secondMulSelectedDate').datepicker({
+		dateFormat: 'dd-mm-yy',
+		minDate:"-3m",
+		maxDate:maxDate
+}); */
+
+		$('.nominationDate').datetimepicker({
+			formatDate : 'dd-mm-yy',
+			format : 'd-m-Y',
+			timepicker : false,
+			minDate : new Date(),
+			maxDate : maxDate
+
+		});
+		$('.sellerDate').datetimepicker({
+			formatDate : 'dd-mm-yy',
+			format : 'd-m-Y',
+			timepicker : false,
+			minDate : new Date(),
+			maxDate : maxDate
+		});
+
+
+	/*$(function() {
+		$( "#datepicker" ).datepicker({ minDate: -20, maxDate: "+1M +10D" });
+	});
+*/
+/* $('.displaynominationDate').daterangepicker({
+          singleDatePicker: true,
+		  locale: {
+            format: 'DD-MM-YYYY'
+        }
+          
+        });
+		$('.nominationDate').daterangepicker({
+          singleDatePicker: true,
+		   locale: {
+            format: 'DD-MM-YYYY'
+        }
+        });
+*/	
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+
+		$(document).ready(function() {
+			$('body').append(htmlConstants.successNominationModel);
+			$('body').append(htmlConstants.logoutModel);
+			$('body').append(htmlConstants.errorModel);
+			$('body').append(htmlConstants.alertModel);
+			$('body').append(htmlConstants.successModel);
+			$('body').append(htmlConstants.customerDescModel);
+			$('body').append(htmlConstants.contractName);
+			$('body').append(htmlConstants.materialDescModel);
+			$('body').append(htmlConstants.contractValidity);
+			$('body').append(htmlConstants.addContractInfo);
+			$('body').append(htmlConstants.sellerRedelPointInfo);
+			insertHeader();
+
+			var ticker = sessionStorage.getItem('tickerText');
+			var list = document.getElementById('tickerText');
+			var entry = document.createElement('li');
+			entry.appendChild(document.createTextNode(ticker));
+			list.appendChild(entry);
+
+			if (ticker == "null" || ticker == null || !ticker) {
+				$('.simple-marquee-container').css('display', 'none');
+			} else {
+				$('.simple-marquee-container').SimpleMarquee();
+			}
+
+		});
+		$('.SingleDate').attr('checked', 'checked');
+		$('#SingleDate').css('display', 'block');
+		$(document).on('click', '.SingleDate', function() {
+			$('#SingleDate').css('display', 'block');
+			$('#MultipleDate').css('display', 'none');
+			$('.MultipleDate').removeAttr('checked');
+			$('.fristSelectedDate').value = "From";
+			$('.secondSelectedDate').value = "To";
+		})
+		$(document).on('click', '.MultipleDate', function() {
+			$('#MultipleDate').css('display', 'block');
+			$('#SingleDate').css('display', 'none');
+			$('.SingleDate').removeAttr('checked');
+			$('.singleSelectedDate').value = "Single Date";
+		})
+
+		function callbackfunciton() {
+			var aa = [];
+			var activeHrefValue = $("a.active").attr("id");
+			if (activeHrefValue == "NominateTab") {
+				if ($('.selectedType').val().trim() == "GSA") {
+					for (var i = 0; i < 6; i++) {
+						aa[i] = $(
+								'.gsaDataTable thead tr th:nth-child('
+										+ (i + 1) + ')').width();
+						$(
+								'.gsaDataTable thead tr th:nth-child('
+										+ (i + 1) + ') div').width(aa[i]);
+					}
+				} else {
+					for (var i = 0; i < 6; i++) {
+						aa[i] = $(
+								'.gtaDataTable thead tr th:nth-child('
+										+ (i + 1) + ')').width();
+						$(
+								'.gtaDataTable thead tr th:nth-child('
+										+ (i + 1) + ') div').width(aa[i]);
+					}
+				}
+			} else if(activeHrefValue == "SellerTab") {
+				for (var i = 0; i < 6; i++) {
+					aa[i] = $(
+							'.gtasellerDataTable thead tr th:nth-child('
+									+ (i + 1) + ')').width();
+					$(
+							'.gtasellerDataTable thead tr th:nth-child('
+									+ (i + 1) + ') div').width(aa[i]);
+				}
+			}
+			else if(activeHrefValue == "DisplayTab") {
+				if ($(".SingleDate").is(":checked")) {
+					if ($('.dinplayselectedType').val().trim() == 'Both') {
+						for (var i = 0; i < 7; i++) {
+							aa[i] = $(
+									'.bothDataDisplayTable thead tr th:nth-child('
+											+ (i + 1) + ')').width();
+							$(
+									'.bothDataDisplayTable thead tr th:nth-child('
+											+ (i + 1) + ') div').width(aa[i]);
+						}
+					} else if ($('.dinplayselectedType').val().trim() == 'GSA') {
+						for (var i = 0; i < 6; i++) {
+							aa[i] = $(
+									'.gsaDataDisplayTable thead tr th:nth-child('
+											+ (i + 1) + ')').width();
+							$(
+									'.gsaDataDisplayTable thead tr th:nth-child('
+											+ (i + 1) + ') div').width(aa[i]);
+						}
+					} else if ($('.dinplayselectedType').val().trim() == 'GTA') {
+						for (var i = 0; i < 6; i++) {
+							aa[i] = $(
+									'.gtaDataDisplayTable thead tr th:nth-child('
+											+ (i + 1) + ')').width();
+							$(
+									'.gtaDataDisplayTable thead tr th:nth-child('
+											+ (i + 1) + ') div').width(aa[i]);
+						}
+					}
+				} else if ($(".MultipleDate").is(":checked")) {
+					if ($('.dinplayselectedType').val().trim() == 'Both') {
+						for (var i = 0; i < 8; i++) {
+							aa[i] = $(
+									'.bothDataDisplayTable thead tr th:nth-child('
+											+ (i + 1) + ')').width();
+							$(
+									'.bothDataDisplayTable thead tr th:nth-child('
+											+ (i + 1) + ') div').width(aa[i]);
+						}
+					} else if ($('.dinplayselectedType').val().trim() == 'GSA') {
+						for (var i = 0; i < 7; i++) {
+							aa[i] = $(
+									'.gsaDataDisplayTable thead tr th:nth-child('
+											+ (i + 1) + ')').width();
+							$(
+									'.gsaDataDisplayTable thead tr th:nth-child('
+											+ (i + 1) + ') div').width(aa[i]);
+						}
+					} else if ($('.dinplayselectedType').val().trim() == 'GTA') {
+						for (var i = 0; i < 6; i++) {
+							aa[i] = $(
+									'.gtaDataDisplayTable thead tr th:nth-child('
+											+ (i + 1) + ')').width();
+							$(
+									'.gtaDataDisplayTable thead tr th:nth-child('
+											+ (i + 1) + ') div').width(aa[i]);
+						}
+					}
+				}
+			}
+			setTimeout(function() {
+				callbackfunciton();
+			}, 10);
+		}
+		callbackfunciton();
+
+/*  Blink Start  */
+
+		(function($) {
+			$.fn.blink = function(options) {
+				var defaults = {
+					delay : 500
+				};
+				var options = $.extend(defaults, options);
+				return $(this).each(function(idx, itm) {
+					var handle = setInterval(function() {
+						if ($(itm).css("visibility") === "visible") {
+							$(itm).css('visibility', 'hidden');
+						} else {
+							$(itm).css('visibility', 'visible');
+						}
+					}, options.delay);
+
+	            $(itm).data('handle', handle);
+	        });
+	    }
+	    $.fn.unblink = function() {
+	        return $(this).each(function(idx, itm) {
+	            var handle = $(itm).data('handle');
+	            if (handle) {
+	                clearInterval(handle);
+	                $(itm).data('handle', null);
+	                $(itm).css('visibility', 'inherit');
+	            }
+	        });
+	    }
+	}(jQuery))
+ 
+
+jQuery('.marquee-sibling span.notice').blink(); 
+
+
+
+</script>
+</body>
+</html>

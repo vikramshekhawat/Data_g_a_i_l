@@ -1,0 +1,461 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+{
+	margin:0;
+	padding:0;
+	background-color: #f7f7f8;
+	font-family: 'Calibri';
+}
+.clear { clear:both; }
+.darkBg{
+    position: absolute;
+    z-index: 10;
+    background: #000;
+    height: 100%;
+    width: 100%;
+    display: block;
+    opacity: 0.5;
+	bottom:0;
+    top:0;
+    left:0;
+    right:0;
+	display:none;
+}
+.popUpBox{
+    background: #fff;
+    position: absolute;
+    z-index: 11;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 30%;
+    height: 30%;
+    border-radius: 10px;	
+	display:none;
+}
+.popUpBox h2{
+	font-size: 21px;
+    color: #000;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    line-height: 50px;
+    padding: 0 0 0 17px;
+    font-weight: normal;
+}
+.popUpBox p{
+	font-size: 15px;
+    margin: 0 15px;
+    line-height: 27px;
+}
+.popUpBox .ButtonBox {
+	padding: 16% 30%;
+}
+.popUpBox .ButtonBox .popUpBtn{
+	padding: 8px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid #0a7155;
+    cursor: pointer;
+    text-decoration: none;
+    color: #231f20;
+}
+
+input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+ font-size: 20px;
+font-weight: normal !important;
+font-family: 'Calibri';
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ font-size: 20px;
+font-weight:normal !important;
+font-family: 'Calibri';
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+ font-size: 20px;
+font-weight:normal !important;
+font-family: 'Calibri';
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ font-size: 20px;
+font-weight:normal !important;
+font-family: 'Calibri';
+}
+.headerMC { }
+.headerMC .gail-logo
+{
+	display: block;
+	text-align:center;
+	margin: 12px 0 13px 15px;
+	text-decoration:none;
+	float:left;
+}
+.headerMC .gail-logo img { border:none; }
+.headerMC .gail-logo .gailTaglin1
+{
+	font-size:23px;
+	color:#231f20;
+	margin:0;
+	padding:0;
+}
+.headerMC .gail-logo .gailTaglin2
+{
+	font-size:15px;
+	color:#231f20;
+	margin:0;
+	padding:0;
+}
+.headerMC .gail-logo .gailTaglin2 span { color:#3fa2da; }
+.headerMC .dropRight
+{
+	float: right;
+	margin: 30px 12px 0 0;
+}
+.headerMC .dropRight .userName { float:right; }
+.headerMC .dropRight .userName .user
+{
+	font-size:20px;
+	color:#3f3f3f;
+	margin:0;
+}
+.headerMC .dropRight .userName .title
+{
+	font-size:20px;
+	color:#ccc;
+	margin:0;
+}
+.headerMC .dropDownMenu { 
+	float:right;
+	padding: 0 0 0 17px;
+	cursor:pointer;
+}
+.headerMC .topDropDown{
+	background: #fff;
+    position: absolute;
+    right: 1px;
+    margin-top: 51px;
+    width: 150px;
+    z-index: 10;
+    box-shadow: 0px 0px 4px #ccc;
+	display:none;
+
+}
+.headerMC .topDropDown .arrowDrop{
+	position: relative;
+    top: -20px;
+    float: right;
+    margin-right: 9px;
+}
+.headerMC .topDropDown ul{margin:0; padding:0; list-style-type:none;}
+.headerMC .topDropDown ul li{border-bottom:1px solid #ccc;}
+.headerMC .topDropDown ul li a{
+	text-decoration: none;
+    color: #000;
+    display: block;
+    padding: 10px;	
+}
+.headerMC .topDropDown ul li a:hover{
+	background:#eee;	
+}
+.wrapperMC{
+	padding: 0 19px;
+}
+.wrapperMC .left{
+	float:left;
+	width: 20%;	
+	position: relative;
+    z-index: 3;
+	padding-top: 50px;
+}
+.wrapperMC .left a.tabMC{
+	border-bottom: 1px solid #ccc;
+	display: block;
+    height: 62px;
+	text-decoration: none;
+    color: #828282;
+	font-size: 21px;
+    line-height: 3;
+	padding: 0 0 0 25px;
+	border-top:1px solid #f7f7f8;
+	border-bottom:1px solid #ccc;
+	border-left:6px solid #f7f7f8;
+	border-right:none;
+}
+.wrapperMC .left a.tabMC span.arroIcon{
+	background:url(images/tab-arrow.png) no-repeat top left;
+	display: inline-block;
+    height: 14px;
+    width: 7px;
+    position: relative;
+    top: 1px;
+    right: -37%;
+}
+.wrapperMC .left a.tabMC span.arroIcon2{
+	background:url(images/tab-arrow.png) no-repeat top left;
+	display: inline-block;
+    height: 14px;
+    width: 7px;
+    position: relative;
+    top: 1px;
+    right: -45%;
+}
+.wrapperMC .left a.tabMC span.iconNominate{
+	background:url(images/nominate.png) no-repeat top left;	
+	display: inline-block;
+    height: 29px;
+    width: 28px;
+    position: relative;
+    top: 7px;
+    left: -10px;
+}
+.wrapperMC .left a.tabMC span.display{
+	background:url(images/display.png) no-repeat top left;	
+	display: inline-block;
+    height: 31px;
+    width: 31px;
+    position: relative;
+    top: 9px;
+    left: -10px;
+}
+.wrapperMC .left a.tabMC:hover{
+	background:#fff;
+	color:#000;
+	border-top:1px solid #0a7155;
+	border-bottom:1px solid #0a7155;
+	border-left:6px solid #0a7155;
+	border-right:none;
+}
+.wrapperMC .left a.tabMC.active{
+	background:#fff;
+	color:#000;
+	border-top:1px solid #0a7155;
+	border-bottom:1px solid #0a7155;
+	border-left:6px solid #0a7155;
+	border-right:none;
+}
+.wrapperMC .right{
+	float:left;	
+	width:75%;
+	height:490px;
+	background: #fff;
+    border: 1px solid #0a7155;
+	left: -1px;
+    z-index: 2;
+	position:relative;
+}
+.wrapperMC .right h2.heading{
+	color: #d52b40;
+    font-size: 34px;
+    margin: 5% 0 0 0;
+    line-height: 48px;
+    text-align: center;
+    font-weight: normal;
+}
+.wrapperMC .right p.comName{
+	color: #231f20;
+    font-size: 31px;
+    margin: 0;
+    line-height: 48px;
+    text-align: center;
+}
+.wrapperMC .right .formBoxDateTime{
+	width: 47%;
+    margin: 5% auto 0 auto;
+}
+.wrapperMC .right .formBoxDateTime .FormField{
+		
+}
+.wrapperMC .right .formBoxDateTime .FormField input.username{
+	background: #fff;
+    border: 1px solid #ccc;
+    width: 97%;
+    height: 60px;
+    border-radius: 10px 10px 0 0;
+	padding: 0 0 0 13px;
+    line-height: 1.6;
+	font-size: 18px;
+	color:#3f3f3f;
+	background:url(images/calender-icon.png) no-repeat 95% 16px;
+	cursor:pointer;
+}
+.wrapperMC .right .formBoxDateTime .FormField input.password{
+	background: #fff;
+    border: 1px solid #ccc;
+    width: 97%;
+    height: 60px;
+    border-radius: 0 0 10px 10px;
+	border-top: none;
+	padding: 0 0 0 13px;
+    line-height: 1;
+	font-size: 18px;
+	color:#3f3f3f;
+	cursor:pointer;
+	background:url(images/arrow1.png) no-repeat 95% 26px;
+}
+.wrapperMC .right .formBoxDateTime .ComnBtn{
+	padding: 12px;
+    font-size: 19px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid #0a7155;
+    text-decoration: none;
+    color: #231f20;
+    display: block;
+    text-align: center;
+    margin-top: 6%;
+	font-weight: bold;
+}
+.wrapperMC .right .formBoxDateTime .ComnBtn:hover{
+	background:#0a7155;
+	color:#fff;
+}
+
+.wrapperMC .right .formBoxDateTime .ComnBtn:focus{
+	background:#0a7155;
+	color:#fff;
+}
+.wrapperMC .right .formBoxDateTime .ComnBtn.activebtn{
+	background:#0a7155;
+	color:#fff;
+}
+.ManagementCfooter{
+	text-align: center;
+    font-size: 14px;
+    color: #626262;
+    margin-top: 1%;}
+.FormField .SelectContractType{
+	position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    margin-top: -9px;
+    width: 467px;
+    z-index: 2;
+	display:none;
+}
+.FormField .SelectContractType ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+.FormField .SelectContractType ul li{
+	border-bottom: 1px solid #ccc;
+}
+.FormField .SelectContractType ul li a{
+	display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #231f20;
+    font-size: 18px;
+}
+.FormField .SelectContractType ul li a:hover{
+	background:#ccc;
+}
+.wrapperMC .right h2.gtaName{
+	font-size: 15px;
+    text-align: right;
+    font-weight: normal;
+    padding: 28px 32px 0 0;
+}
+.wrapperMC .right .gtaTblBox{
+	border: 1px solid #ccc;
+    margin: 15px;
+    border-radius: 10px;
+}
+.wrapperMC .right .gtaTblBox h3{ 
+	background:url(images/h2-bg.png) repeat-x;
+	color: #fff;
+    padding: 8px 0 11px 12px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+	border-radius: 9px 9px 0 0;
+}
+.wrapperMC .right .gtaTblBox .tblGTA{
+	
+}
+.wrapperMC .right .gtaTblBox .tblGTA th{
+	font-size:17px;
+	font-weight:normal;
+	border-right: 1px solid #ccc;
+	padding: 7px;
+	border-bottom: 1px solid #ccc;
+}
+.wrapperMC .right .gtaTblBox .tblGTA td{
+	font-size:17px;
+	font-weight:normal;
+	border-right: 1px solid #ccc;
+	padding: 7px;
+	color:#ccc;
+}
+.wrapperMC .right .gtaTblBox .tblGTA td.focus{
+	color:#000;
+	
+
+}
+.wrapperMC .right .gtaTblBox .tblGTA th:last-child,.wrapperMC .right .gtaTblBox .tblGTA td:last-child{
+	border-right:none;
+}
+.wrapperMC .right .gtaTblBox .tblGTA tr td{
+	border-bottom: 1px solid #ccc;
+}
+.wrapperMC .right .gtaTblBox .tblGTA .impIcon{
+	background:url(images/Imp-icon.png) no-repeat 0px 0px;
+	display: inline;
+    width: 16px;
+    height: 15px;
+	float: right;
+	position: relative;
+    top: 4px;	
+}
+.wrapperMC .right .gtaTblBox .tblGTA tr td input{
+	border:none;	
+}
+
+.wrapperMC .right .gtaTblBox .tblGTA tr td input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+ font-size: 17px;
+font-weight: normal !important;
+font-family: 'Calibri';
+line-height:18px
+}
+.wrapperMC .right .gtaTblBox .tblGTA tr td input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ font-size: 17px;
+font-weight:normal !important;
+font-family: 'Calibri';
+line-height:18px
+}
+.wrapperMC .right .gtaTblBox .tblGTA tr td input::-moz-placeholder { /* Mozilla Firefox 19+ */
+ font-size: 17px;
+font-weight:normal !important;
+font-family: 'Calibri';
+line-height:18px
+}
+.wrapperMC .right .gtaTblBox .tblGTA tr td input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ font-size: 17px;
+font-weight:normal !important;
+font-family: 'Calibri';
+line-height:18px
+}
+.wrapperMC .right .gtaTblBox .ComnBtn{
+	padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid #0a7155;
+    text-decoration: none;
+    color: #231f20;
+    display: block;
+    text-align: center;
+    margin-top: 6%;
+    font-weight: normal;
+    cursor: pointer;
+    float: right;
+}
+.wrapperMC .right .gtaTblBox .ComnBtn:hover{
+	background:#0a7155;
+	color:#fff;
+}

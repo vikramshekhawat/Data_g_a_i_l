@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Gail (India) Limited</title>
+<link href="font/font.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/ChangePassword.css" rel="stylesheet" type="text/css">
+<script src="js/common.js"></script> 
+<script src="js/messages.js"></script>
+<script src="js/html-constants.js"></script>  
+<script src="js/document-init.js"></script> 
+
+</head>
+
+<body onload="configureProfilePage()">
+<div class="darkBg"></div>
+<div class="popUpBox">
+<h2>Change password</h2>
+<p>asdfa</p>
+<div class="ButtonBox">
+<button type="submit" class="popUpBtn">Ok</button>
+<button type="submit" class="popUpBtn">Cancel</button>
+</div>
+</div>
+
+
+<div class="EditProfileBox">
+<h1>Edit Profile</h1>
+<div class="editProfileaAccording" >
+	
+   <div class="HeadingAccording NameTab displayName"></div>
+   <div class="HeadingAccording bdrNoneBottom" id="togleChangePawsHed">Change Password<i class="OpenTab" id="psChOpenTab"></i></div>
+   <div class="ChangePassFormBox bdrNoneBottom displayNone" id="togleChangePawsBox">
+   		<input type="password" class="InputextFild oldPassword" placeholder="Current Password"/>
+        <input type="password" class="InputextFild newPassword" placeholder="New Password"/>
+        <input type="password" class="InputextFild reNewPassword" placeholder="Re-type Password"/>
+        <!-- <p>Password must contain minimum 8 character including at least 1 numeric charcter.</p> -->
+       
+        <a href="#" class="actionBtn" onclick="changePasswordOnEditProfile();">Save</a>
+        <a href="#" class="actionBtn cancelPass" onclick="clearPassword();">Cancel</a>
+       <div class="clear"></div>
+   	
+   
+   </div>
+      <div class="HeadingAccording  lastTab" id="EmailToggleHed">Change Email<i class="OpenTab" id="EmailChOpenTab"></i></div>
+   <div class="ChangePassFormBox displayNone" id="EmailToggleBox">
+   		<div style="display:block">
+        <input type="text" class="InputextFild primaryEmail"  style="float:left" placeholder="Primary Email" readonly/>
+        <img src="images/editprofile-edit-icon.png" width="31" height="32" class="cancelIcon" onclick="editPrimaryEmail()"/>
+	    <img src="images/cancel-igon.png" width="31" height="32" class="cancelIcon " onclick="setDefaultEmail()"/>
+        </div>
+        <div style="display:block">
+        <input type="text" class="InputextFild firstSecEmail"  style="float:left" placeholder="Secondary Email"/>
+        
+        <img src="images/cancel-igon.png" width="31" height="32" class="cancelIcon" onclick="clearText('firstSecEmail')"/>
+        </div>
+        <div class="clear"></div>
+        <div style="display:block">
+        <input type="text" class="InputextFild secondSecEmail"  style="float:left" placeholder="Secondary Email"/>
+        <img src="images/cancel-igon.png" width="31" height="32" class="cancelIcon" onclick="clearText('secondSecEmail')"/>
+        </div>
+        <div class="clear"></div>
+        <div style="display:block">
+        <input type="text" class="InputextFild thirdSecEmail"  style="float:left" placeholder="Secondary Email"/>
+        <img src="images/cancel-igon.png" width="31" height="32" class="cancelIcon" onclick="clearText('thirdSecEmail')"/>
+        </div>
+        <div class="clear"></div>
+        <div style="display:block">
+        <input type="text" class="InputextFild fourSecEmail"  style="float:left" placeholder="Secondary Email"/>
+        <img src="images/cancel-igon.png" width="31" height="32" class="cancelIcon" onclick="clearText('fourSecEmail')"/>
+        </div>
+        <div class="clear"></div>
+        <div style="display:block">
+        
+       <!-- <p>Password must contain minimum 8 character including at least 1 numeric charcter.</p> -->
+       
+        <a href="#" class="actionBtn" onclick="saveEmails()">Save</a>
+        <a href="#" class="actionBtn cancelEmail">Cancel</a>
+       <div class="clear"></div>
+       </div>
+   	
+   
+   </div>
+
+   <!--<div class="HeadingAccording bdrNoneBottom editUserIdPad">
+   <input type="text" value="siddharthmalhotra@gail.com(Primarry)" class="changeUserId"  disabled/>
+     <div class="editBox">
+        <a class="EditBtn" href="#" id="editId"><img src="images/editprofile-edit-icon.png" width="31" height="32" /></a>
+	</div>
+        <div class="cancelSaveBox  displayNone">
+        	<a class="EditBtn" href="#" id="saveBtn"><img src="images/add-icon.png" width="33" height="31" /></a>
+            <a class="EditBtn" href="#" id="cancelBtn"><img src="images/cancel-igon.png" width="33" height="31" /></a>
+        </div>
+   </div>-->
+<!--   <div class="HeadingAccording lastTab" id="EmailToggleHed">Secondary Email Ids<i class="OpenTab" id="EmailChOpenTab"></i></div>
+   <div class="SecondaryIdBox " id="EmailToggleBox">
+        <input type="text" class="InputextFild" />
+        <a href="#" class="actionBtn">Save</a>
+        <a href="#" class="actionBtn">Cancel</a>
+       <div class="clear"></div>
+
+   </div>
+-->   
+</div>
+<div class="clear"></div>
+</div>
+<div class="Changefooter">
+	Privacy Policy | Copyright@2016 GAIL India Limited. All Rights Reserved </div>
+
+
+<script type="text/jscript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/jscript" src="js/uiJquery.js"></script>
+<script type="text/jscript" src="js/profile.js"></script>
+<script type="text/jscript" src="js/user.js"></script>
+<script src="js/processing.js"></script> 
+<script src="js/constants.js"></script> 
+<script>
+$(document).ready(function(){
+	$('body').append(htmlConstants.successModel);
+	$('body').append(htmlConstants.logoutModel);
+	$('body').append(htmlConstants.errorModel);
+	$('body').append(htmlConstants.alertModel);
+	insertHeader();
+	
+	
+});
+$(document).on('click','#editId',function(){
+	$(this).hide();
+	$('.cancelSaveBox').removeClass('displayNone');
+	$('.changeUserId').prop("disabled", false);
+	});
+
+$(document).on('click','#saveBtn',function(){
+	$('.changeUserId').prop("disabled", true);
+	$('.cancelSaveBox').addClass('displayNone');
+	$('#editId').show();
+	
+	});
+
+
+
+
+</script>
+</body>
+</html>
